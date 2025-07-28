@@ -1,0 +1,17 @@
+{
+  "cxxNamespace": ["mapboxturnbyturnnavigation"],
+  "ios": {
+    "iosModuleName": "MapboxTurnByTurnNavigation"
+  },
+  "android": {
+    "androidNamespace": ["mapboxturnbyturnnavigation"],
+    "androidCxxLibName": "mapboxturnbyturnnavigation"
+  },
+  "autolinking": {
+    "MapboxTurnByTurnNavigation": {
+      "swift": "HybridMapboxTurnByTurnNavigation",
+      "kotlin": "HybridMapboxTurnByTurnNavigation"
+    }
+  },
+  "ignorePaths": ["node_modules"]
+}
