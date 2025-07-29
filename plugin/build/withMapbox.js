@@ -126,73 +126,108 @@ const withMapboxAndroid = (config, { MapboxPublicToken, MapboxDownloadToken }) =
     });
     return config;
 };
-const addSPMDependenciesToMainTarget = (config, options) => {
-    return (0, config_plugins_1.withXcodeProject)(config, (config) => {
-        const { version, repositoryUrl, repoName, products } = options;
-        const xcodeProject = config.modResults;
-        // Step 1: Add XCRemoteSwiftPackageReference
-        if (!xcodeProject.hash.project.objects['XCRemoteSwiftPackageReference']) {
-            xcodeProject.hash.project.objects['XCRemoteSwiftPackageReference'] = {};
-        }
-        const packageReferenceUUID = xcodeProject.generateUuid();
-        xcodeProject.hash.project.objects['XCRemoteSwiftPackageReference'][`${packageReferenceUUID} /* XCRemoteSwiftPackageReference "${repoName}" */`] = {
-            isa: 'XCRemoteSwiftPackageReference',
-            repositoryURL: repositoryUrl,
-            requirement: {
-                kind: 'upToNextMajorVersion',
-                minimumVersion: version,
-            },
-        };
-        // Step 2: Add XCSwiftPackageProductDependency for each product
-        if (!xcodeProject.hash.project.objects['XCSwiftPackageProductDependency']) {
-            xcodeProject.hash.project.objects['XCSwiftPackageProductDependency'] = {};
-        }
-        const productUUIDs = [];
-        products.forEach((productName) => {
-            const productUUID = xcodeProject.generateUuid();
-            productUUIDs.push(productUUID);
-            xcodeProject.hash.project.objects['XCSwiftPackageProductDependency'][`${productUUID} /* ${productName} */`] = {
-                isa: 'XCSwiftPackageProductDependency',
-                package: `${packageReferenceUUID} /* XCRemoteSwiftPackageReference "${repoName}" */`,
-                productName: productName,
-            };
-        });
-        // Step 3: Update PBXProject packageReferences
-        const projectId = Object.keys(xcodeProject.hash.project.objects['PBXProject'])[0];
-        if (!projectId) {
-            throw new Error('Could not find PBXProject');
-        }
-        const project = xcodeProject.hash.project.objects['PBXProject'][projectId];
-        if (!project.packageReferences) {
-            project.packageReferences = [];
-        }
-        project.packageReferences.push(`${packageReferenceUUID} /* XCRemoteSwiftPackageReference "${repoName}" */`);
-        // Step 4: Add PBXBuildFile for each product
-        const buildFileUUIDs = [];
-        products.forEach((productName, index) => {
-            const buildFileUUID = xcodeProject.generateUuid();
-            buildFileUUIDs.push(buildFileUUID);
-            xcodeProject.hash.project.objects['PBXBuildFile'][`${buildFileUUID} /* ${productName} in Frameworks */`] = {
-                isa: 'PBXBuildFile',
-                productRef: `${productUUIDs[index]} /* ${productName} */`,
-            };
-        });
-        // Step 5: Update PBXFrameworksBuildPhase
-        const frameworksBuildPhases = xcodeProject.hash.project.objects['PBXFrameworksBuildPhase'];
-        const buildPhaseId = Object.keys(frameworksBuildPhases)[0];
-        if (!buildPhaseId) {
-            throw new Error('Could not find PBXFrameworksBuildPhase');
-        }
-        const buildPhase = frameworksBuildPhases[buildPhaseId];
-        if (!buildPhase.files) {
-            buildPhase.files = [];
-        }
-        buildFileUUIDs.forEach((buildFileUUID, index) => {
-            buildPhase.files.push(`${buildFileUUID} /* ${products[index]} in Frameworks */`);
-        });
-        return config;
-    });
-};
+// const addSPMDependenciesToMainTarget = (
+//   config: ExpoConfig,
+//   options: {
+//     version: string;
+//     repositoryUrl: string;
+//     repoName: string;
+//     products: string[];
+//   }
+// ) => {
+//   return withXcodeProject(config, (config) => {
+//     const { version, repositoryUrl, repoName, products } = options;
+//     const xcodeProject = config.modResults;
+//
+//     // Step 1: Add XCRemoteSwiftPackageReference
+//     if (!xcodeProject.hash.project.objects['XCRemoteSwiftPackageReference']) {
+//       xcodeProject.hash.project.objects['XCRemoteSwiftPackageReference'] = {};
+//     }
+//
+//     const packageReferenceUUID = xcodeProject.generateUuid();
+//     xcodeProject.hash.project.objects['XCRemoteSwiftPackageReference'][
+//       `${packageReferenceUUID} /* XCRemoteSwiftPackageReference "${repoName}" */`
+//     ] = {
+//       isa: 'XCRemoteSwiftPackageReference',
+//       repositoryURL: repositoryUrl,
+//       requirement: {
+//         kind: 'upToNextMajorVersion',
+//         minimumVersion: version,
+//       },
+//     };
+//
+//     // Step 2: Add XCSwiftPackageProductDependency for each product
+//     if (!xcodeProject.hash.project.objects['XCSwiftPackageProductDependency']) {
+//       xcodeProject.hash.project.objects['XCSwiftPackageProductDependency'] = {};
+//     }
+//
+//     const productUUIDs: string[] = [];
+//     products.forEach((productName) => {
+//       const productUUID = xcodeProject.generateUuid();
+//       productUUIDs.push(productUUID);
+//       xcodeProject.hash.project.objects['XCSwiftPackageProductDependency'][
+//         `${productUUID} /* ${productName} */`
+//       ] = {
+//         isa: 'XCSwiftPackageProductDependency',
+//         package: `${packageReferenceUUID} /* XCRemoteSwiftPackageReference "${repoName}" */`,
+//         productName: productName,
+//       };
+//     });
+//
+//     // Step 3: Update PBXProject packageReferences
+//     const projectId = Object.keys(
+//       xcodeProject.hash.project.objects['PBXProject']
+//     )[0];
+//
+//     if (!projectId) {
+//       throw new Error('Could not find PBXProject');
+//     }
+//
+//     const project = xcodeProject.hash.project.objects['PBXProject'][projectId];
+//     if (!project.packageReferences) {
+//       project.packageReferences = [];
+//     }
+//
+//     project.packageReferences.push(
+//       `${packageReferenceUUID} /* XCRemoteSwiftPackageReference "${repoName}" */`
+//     );
+//
+//     // Step 4: Add PBXBuildFile for each product
+//     const buildFileUUIDs: string[] = [];
+//     products.forEach((productName, index) => {
+//       const buildFileUUID = xcodeProject.generateUuid();
+//       buildFileUUIDs.push(buildFileUUID);
+//       xcodeProject.hash.project.objects['PBXBuildFile'][
+//         `${buildFileUUID} /* ${productName} in Frameworks */`
+//       ] = {
+//         isa: 'PBXBuildFile',
+//         productRef: `${productUUIDs[index]} /* ${productName} */`,
+//       };
+//     });
+//
+//     // Step 5: Update PBXFrameworksBuildPhase
+//     const frameworksBuildPhases =
+//       xcodeProject.hash.project.objects['PBXFrameworksBuildPhase'];
+//     const buildPhaseId = Object.keys(frameworksBuildPhases)[0];
+//
+//     if (!buildPhaseId) {
+//       throw new Error('Could not find PBXFrameworksBuildPhase');
+//     }
+//
+//     const buildPhase = frameworksBuildPhases[buildPhaseId];
+//     if (!buildPhase.files) {
+//       buildPhase.files = [];
+//     }
+//
+//     buildFileUUIDs.forEach((buildFileUUID, index) => {
+//       buildPhase.files.push(
+//         `${buildFileUUID} /* ${products[index]} in Frameworks */`
+//       );
+//     });
+//
+//     return config;
+//   });
+// };
 const withMapboxIOS = (config, { MapboxPublicToken }) => {
     config = (0, config_plugins_1.withInfoPlist)(config, (config) => {
         if (!MapboxPublicToken) {

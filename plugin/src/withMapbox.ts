@@ -1,22 +1,21 @@
 import {
-  ConfigPlugin,
+  type ConfigPlugin,
   createRunOncePlugin,
   WarningAggregator,
   withProjectBuildGradle,
   withAndroidColors,
   withGradleProperties,
-  withXcodeProject,
   withInfoPlist,
 } from 'expo/config-plugins';
 
 import {
   createGeneratedHeaderComment,
   removeGeneratedContents,
-  MergeResults,
+  type MergeResults,
 } from './generateCode';
 import { resolve } from 'path';
 import { existsSync, mkdirSync, writeFileSync } from 'fs';
-import { ExpoConfig } from '@expo/config-types';
+import type { ExpoConfig } from '@expo/config-types';
 
 let pkg: { name: string; version?: string } = {
   name: 'react-native-mapbox-turn-by-turn-navigation',
