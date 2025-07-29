@@ -10,18 +10,18 @@
  *
  * @param src
  */
-import crypto from "crypto";
+import crypto from 'crypto';
 
 function getGeneratedSectionIndexes(
   src: string,
-  tag: string,
+  tag: string
 ): { contents: string[]; start: number; end: number } {
-  const contents = src.split("\n");
+  const contents = src.split('\n');
   const start = contents.findIndex((line) =>
-    line.includes(`@generated begin ${tag}`),
+    line.includes(`@generated begin ${tag}`)
   );
   const end = contents.findIndex((line) =>
-    line.includes(`@generated end ${tag}`),
+    line.includes(`@generated end ${tag}`)
   );
 
   return { contents, start, end };
@@ -65,7 +65,7 @@ export function mergeContents({
     return {
       contents: addLines(sanitizedTarget ?? src, anchor, offset, [
         header,
-        ...newSrc.split("\n"),
+        ...newSrc.split('\n'),
         `${comment} @generated end ${tag}`,
       ]),
       didMerge: true,
@@ -79,18 +79,18 @@ function addLines(
   content: string,
   find: string | RegExp,
   offset: number,
-  toAdd: string[],
+  toAdd: string[]
 ) {
-  const lines = content.split("\n");
+  const lines = content.split('\n');
 
   let lineIndex = lines.findIndex((line) => line.match(find));
   if (lineIndex < 0) {
     const error = new Error(
-      `Failed to match "${find}" in contents:\n${content}`,
+      `Failed to match "${find}" in contents:\n${content}`
     );
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
     // @ts-ignore
-    error.code = "ERR_NO_MATCH";
+    error.code = 'ERR_NO_MATCH';
     throw error;
   }
   for (const newLine of toAdd) {
@@ -98,7 +98,7 @@ function addLines(
     lineIndex++;
   }
 
-  return lines.join("\n");
+  return lines.join('\n');
 }
 
 /**
@@ -109,14 +109,14 @@ function addLines(
  */
 export function removeGeneratedContents(
   src: string,
-  tag: string,
+  tag: string
 ): string | null {
   const { contents, start, end } = getGeneratedSectionIndexes(src, tag);
   if (start > -1 && end > -1 && start < end) {
     contents.splice(start, end - start + 1);
     // TODO: We could in theory check that the contents we're removing match the hash used in the header,
     // this would ensure that we don't accidentally remove lines that someone added or removed from the generated section.
-    return contents.join("\n");
+    return contents.join('\n');
   }
   return null;
 }
@@ -124,7 +124,7 @@ export function removeGeneratedContents(
 export function createGeneratedHeaderComment(
   contents: string,
   tag: string,
-  comment: string,
+  comment: string
 ): string {
   const hashKey = createHash(contents);
 
@@ -134,6 +134,6 @@ export function createGeneratedHeaderComment(
 
 export function createHash(src: string): string {
   // this doesn't need to be secure, the shorter the better.
-  const hash = crypto.createHash("sha1").update(src).digest("hex");
+  const hash = crypto.createHash('sha1').update(src).digest('hex');
   return `sync-${hash}`;
 }

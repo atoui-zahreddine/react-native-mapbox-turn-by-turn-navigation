@@ -1,1 +1,1 @@
-module.exports = require("./plugin/build/withMapbox");
+module.exports = require('./lib/module/plugin/withMapbox.js');

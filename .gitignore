@@ -78,4 +78,8 @@ android/keystores/debug.keystore
 ios/generated
 android/generated
 
+# React Native Bob builds
+lib/
+nitrogen/
+
 /example/android/.kotlin/errors

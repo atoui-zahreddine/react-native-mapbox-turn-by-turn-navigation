@@ -45,8 +45,8 @@ const copyMapboxAccessTokenXml = (
   // Use withAndroidColors to add a string resource.
   // This is a convenient way to add XML resources to values/colors.xml,
   // but we will manually create a new file specifically for the token.
-  return withAndroidColors(config, (config) => {
-    const androidProjectRoot = config.modRequest.platformProjectRoot;
+  return withAndroidColors(config, (androidConfig) => {
+    const androidProjectRoot = androidConfig.modRequest.platformProjectRoot;
     const valuesDir = resolve(
       androidProjectRoot,
       'app',
@@ -76,7 +76,7 @@ const copyMapboxAccessTokenXml = (
       console.error(`Error writing mapbox_access_token.xml: ${error}`);
     }
 
-    return config;
+    return androidConfig;
   });
 };
 
@@ -302,18 +302,18 @@ const withMapboxIOS: ConfigPlugin<MapboxPlugProps> = (
   config,
   { MapboxPublicToken }
 ) => {
-  config = withInfoPlist(config, (config) => {
+  config = withInfoPlist(config, (iosConfig) => {
     if (!MapboxPublicToken) {
       WarningAggregator.addWarningIOS(
         'withMapbox',
         'Mapbox Public Token is missing. Please provide MapboxPublicToken.'
       );
-      return config;
+      return iosConfig;
     }
-    if (config.modResults.MBXAccessToken) return config;
+    if (iosConfig.modResults.MBXAccessToken) return iosConfig;
 
-    config.modResults.MBXAccessToken = MapboxPublicToken;
-    return config;
+    iosConfig.modResults.MBXAccessToken = MapboxPublicToken;
+    return iosConfig;
   });
 
   return config;
