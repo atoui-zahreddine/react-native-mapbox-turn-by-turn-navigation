@@ -3,14 +3,16 @@
   "version": "0.3.2",
   "description": "React native module for Mapbox Navigation SDK v3 with full turn-by-turn navigation support.",
   "main": "./lib/module/index.js",
-  "types": "./lib/typescript/src/index.d.ts",
+  "types": "./lib/typescript/module/src/index.d.ts",
   "exports": {
     ".": {
       "source": "./src/index.tsx",
-      "types": "./lib/typescript/src/index.d.ts",
+      "import": "./lib/module/index.js",
+      "types": "./lib/typescript/module/src/index.d.ts",
       "default": "./lib/module/index.js"
     },
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./app.plugin.js": "./app.plugin.js"
   },
   "files": [
     "src",
@@ -154,6 +156,7 @@
           "esm": true
         }
       ],
+      "commonjs",
       [
         "typescript",
         {
