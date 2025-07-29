@@ -1,6 +1,6 @@
 {
   "name": "react-native-mapbox-turn-by-turn-navigation",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "description": "React native module for Mapbox Navigation SDK v3 with full turn-by-turn navigation support.",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
