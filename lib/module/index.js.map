@@ -1,0 +1,1 @@
+{"version":3,"names":["getHostComponent","MapboxTurnByTurnNavigationConfig","require","MapboxTurnByTurnNavigationView"],"sourceRoot":"../../src","sources":["index.tsx"],"mappings":";;AAAA,SAASA,gBAAgB,QAAQ,4BAA4B;AAC7D,MAAMC,gCAAgC,GAAGC,OAAO,CAAC,yEAAyE,CAAC;AAM3H,OAAO,MAAMC,8BAA8B,GAAGH,gBAAgB,CAG5D,4BAA4B,EAAE,MAAMC,gCAAgC,CAAC","ignoreList":[]}
