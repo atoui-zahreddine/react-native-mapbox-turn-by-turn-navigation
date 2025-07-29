@@ -6,7 +6,7 @@ import {
   withAndroidColors,
   withGradleProperties,
   withInfoPlist,
-} from 'expo/config-plugins';
+} from '@expo/config-plugins';
 
 import {
   createGeneratedHeaderComment,

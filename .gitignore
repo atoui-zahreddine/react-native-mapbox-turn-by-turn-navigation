@@ -79,4 +79,3 @@ ios/generated
 android/generated
 
 /example/android/.kotlin/errors
-!/plugin/build/
