@@ -197,7 +197,7 @@ const withMapboxAndroid: ConfigPlugin<MapboxPlugProps> = (
   return config;
 };
 
-const addSPMDependenciesToMainTarget = (
+const _addSPMDependenciesToMainTarget = (
   config: ExpoConfig,
   options: {
     version: string;

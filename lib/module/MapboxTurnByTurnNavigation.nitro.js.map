@@ -1,0 +1,1 @@
+{"version":3,"names":["TravelModeEnum","DistanceUnitEnum"],"sourceRoot":"../../src","sources":["MapboxTurnByTurnNavigation.nitro.ts"],"mappings":";;AAoDA,WAAYA,cAAc,0BAAdA,cAAc;EAAdA,cAAc;EAAdA,cAAc;EAAdA,cAAc;EAAdA,cAAc;EAAA,OAAdA,cAAc;AAAA;AAM1B,WAAYC,gBAAgB,0BAAhBA,gBAAgB;EAAhBA,gBAAgB;EAAhBA,gBAAgB;EAAA,OAAhBA,gBAAgB;AAAA","ignoreList":[]}
