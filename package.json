@@ -34,7 +34,7 @@
     "typecheck": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
-    "prepare": "bob build",
+    "prepare": "yarn nitrogen && bob build",
     "nitrogen": "nitro-codegen",
     "semantic-release:ci": "semantic-release --ci"
   },
@@ -143,13 +143,6 @@
     "source": "src",
     "output": "lib",
     "targets": [
-      [
-        "custom",
-        {
-          "script": "nitrogen",
-          "clean": "nitrogen/"
-        }
-      ],
       "commonjs",
       "module",
       [

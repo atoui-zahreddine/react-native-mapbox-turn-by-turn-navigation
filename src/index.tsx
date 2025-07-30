@@ -1,4 +1,4 @@
-const MapboxTurnByTurnNavigationConfig = require('../nitrogen/generated/shared/json/MapboxTurnByTurnNavigationConfig.json');
+import MapboxTurnByTurnNavigationConfig from '../nitrogen/generated/shared/json/MapboxTurnByTurnNavigationConfig.json';
 import type {
   MapboxTurnByTurnNavigationMethods,
   MapboxTurnByTurnNavigationProps,
