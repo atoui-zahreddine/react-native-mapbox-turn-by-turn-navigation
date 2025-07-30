@@ -1,3 +1,10 @@
+## [0.4.2](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/compare/v0.4.1...v0.4.2) (2025-07-30)
+
+
+### Bug Fixes
+
+* modify prepare script in package.json ([cecdcb0](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/commit/cecdcb00d38716eef60fb4f8d9c219ddb142ac9e))
+
 ## [0.4.1](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/compare/v0.4.0...v0.4.1) (2025-07-30)
 
 
