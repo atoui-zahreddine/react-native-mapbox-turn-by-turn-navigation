@@ -1,3 +1,10 @@
+## [0.4.1](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/compare/v0.4.0...v0.4.1) (2025-07-30)
+
+
+### Bug Fixes
+
+* remove usage of react-native in the nitro module ([6648ed7](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/commit/6648ed7856c4049e63081a123a012597e964ecb4))
+
 # [0.4.0](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/compare/v0.3.0...v0.4.0) (2025-07-30)
 
 
