@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/compare/v0.3.0...v0.4.0) (2025-07-30)
+
+
+### Features
+
+* remove location permission handling ([e7c5224](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/commit/e7c522446904c0c2893cf1809aa99f3a0f048c9c))
+
 # [0.3.0](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/compare/v0.2.0...v0.3.0) (2025-07-30)
 
 
