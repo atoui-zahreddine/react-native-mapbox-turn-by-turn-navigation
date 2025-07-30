@@ -36,7 +36,7 @@
     "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
     "prepare": "bob build",
     "nitrogen": "nitro-codegen",
-    "release": "release-it --only-version"
+    "semantic-release": "semantic-release"
   },
   "keywords": [
     "react-native",
@@ -45,14 +45,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atoui-zahreddine//react-native-mapbox-turn-by-turn-navigation.git"
+    "url": "git+https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation.git"
   },
-  "author": "Zahreddine Atoui <at.zahreddine@gmail.com> (https://github.com/atoui-zahreddine/)",
+  "author": "Zahreddine Atoui <at.zahreddine@gmail.com> (https://github.com/atoui-zahreddine)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/atoui-zahreddine//react-native-mapbox-turn-by-turn-navigation/issues"
+    "url": "https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/issues"
   },
-  "homepage": "https://github.com/atoui-zahreddine//react-native-mapbox-turn-by-turn-navigation#readme",
+  "homepage": "https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -65,7 +65,10 @@
     "@expo/config-plugins": "^10.1.2",
     "@react-native/babel-preset": "0.79.2",
     "@react-native/eslint-config": "^0.78.0",
-    "@release-it/conventional-changelog": "^9.0.2",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^10.0.2",
+    "@semantic-release/npm": "^12.0.0",
     "@types/jest": "^29.5.5",
     "@types/react": "^19.0.0",
     "commitlint": "^19.6.1",
@@ -81,15 +84,15 @@
     "react": "19.0.0",
     "react-native": "0.79.2",
     "react-native-builder-bob": "^0.40.13",
-    "react-native-nitro-modules": "^0.26.4",
-    "release-it": "^17.10.0",
+    "react-native-nitro-modules": "^0.27.2",
+    "semantic-release": "^22.0.0",
     "turbo": "^1.10.7",
     "typescript": "^5.8.3"
   },
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "react-native-nitro-modules": "^0.26.4"
+    "react-native-nitro-modules": "^0.27.2"
   },
   "workspaces": [
     "example"
@@ -107,24 +110,27 @@
       "@commitlint/config-conventional"
     ]
   },
-  "release-it": {
-    "git": {
-      "commitMessage": "chore: release ${version}",
-      "tagName": "v${version}"
-    },
-    "npm": {
-      "publish": true
-    },
-    "github": {
-      "release": true
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "preset": {
-          "name": "angular"
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md",
+            "package.json"
+          ],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
         }
-      }
-    }
+      ]
+    ]
   },
   "prettier": {
     "quoteProps": "consistent",
