@@ -14,7 +14,7 @@
     "react": "19.0.0",
     "react-native": "0.79.2",
     "react-native-mapbox-turn-by-turn-navigation": "workspace:^",
-    "react-native-nitro-modules": "^0.26.4"
+    "react-native-nitro-modules": "^0.27.2"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

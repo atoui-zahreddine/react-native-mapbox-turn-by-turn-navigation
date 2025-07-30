@@ -12597,7 +12597,7 @@ __metadata:
     react-native-builder-bob: ^0.40.13
     react-native-mapbox-turn-by-turn-navigation: "workspace:^"
     react-native-monorepo-config: ^0.1.9
-    react-native-nitro-modules: ^0.26.4
+    react-native-nitro-modules: ^0.27.2
   languageName: unknown
   linkType: soft
 
