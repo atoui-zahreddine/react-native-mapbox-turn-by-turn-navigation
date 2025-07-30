@@ -100,6 +100,7 @@ export default function App() {
       <StatusBar barStyle="dark-content" />
       <View style={[styles.container]}>
         <MapboxTurnByTurnNavigationView
+          style={styles.mapboxView}
           hybridRef={{ f: (hRef) => setHybridRef(hRef) }}
           origin={{
             longitude: 5.058566,
@@ -117,6 +118,9 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+  },
+  mapboxView: {
     flex: 1,
   },
 });
