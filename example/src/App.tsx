@@ -1,6 +1,12 @@
-import { View, StyleSheet, StatusBar } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  StatusBar,
+  PermissionsAndroid,
+  Platform,
+} from 'react-native';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   MapboxTurnByTurnNavigationView,
   type MapboxTurnByTurnNavigation,
@@ -8,6 +14,35 @@ import {
 
 export default function App() {
   const [hybridRef, setHybridRef] = useState<MapboxTurnByTurnNavigation>();
+  const isMountedRef = useRef<boolean>(true);
+  const [ready, setReady] = useState(false);
+
+  const checkPermissions = async () => {
+    try {
+      const granted = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION
+      );
+      if (granted !== PermissionsAndroid.RESULTS.GRANTED) {
+        console.warn('Location permission not granted');
+        return;
+      }
+      if (isMountedRef.current) setReady(true);
+    } catch (error) {
+      console.error('Error checking permissions:', error);
+    }
+  };
+
+  useEffect(() => {
+    isMountedRef.current = true;
+    if (Platform.OS === 'android') {
+      checkPermissions();
+    } else {
+      setReady(true); // Assume permissions are granted on iOS
+    }
+    return () => {
+      isMountedRef.current = false;
+    };
+  }, []);
 
   useEffect(() => {
     let unsubscribeFromListeners: (() => void)[] = [];
@@ -55,6 +90,10 @@ export default function App() {
       }
     };
   }, [hybridRef]);
+
+  if (!ready) {
+    return <View style={styles.container} />;
+  }
 
   return (
     <>
