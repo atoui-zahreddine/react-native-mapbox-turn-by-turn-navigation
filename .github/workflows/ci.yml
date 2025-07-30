@@ -64,6 +64,10 @@ jobs:
       - name: Generate nitrogen code
         run: yarn nitrogen
 
+      - name: Setup Mapbox token for Android
+        run: |
+          echo "MAPBOX_DOWNLOADS_TOKEN=${{ secrets.MAPBOX_DOWNLOADS_TOKEN }}" >> example/android/gradle.properties
+
       - name: Cache turborepo for Android
         uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
         with:
@@ -123,6 +127,13 @@ jobs:
 
       - name: Generate nitrogen code
         run: yarn nitrogen
+
+      - name: Setup Mapbox token for iOS
+        run: |
+          echo "machine api.mapbox.com" >> ~/.netrc
+          echo "login mapbox" >> ~/.netrc
+          echo "password ${{ secrets.MAPBOX_DOWNLOADS_TOKEN }}" >> ~/.netrc
+          chmod 600 ~/.netrc
 
       - name: Cache turborepo for iOS
         uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
