@@ -1,19 +1,13 @@
 import { View, StyleSheet, StatusBar } from 'react-native';
 
 import { useEffect, useState } from 'react';
-import type {
-  MapboxTurnByTurnNavigationMethods,
-  MapboxTurnByTurnNavigationProps,
-} from '../../src/MapboxTurnByTurnNavigation.nitro';
-import type { HybridView } from 'react-native-nitro-modules';
-import { MapboxTurnByTurnNavigation } from 'react-native-mapbox-turn-by-turn-navigation';
+import {
+  MapboxTurnByTurnNavigationView,
+  type MapboxTurnByTurnNavigation,
+} from 'react-native-mapbox-turn-by-turn-navigation';
 
-type MapboxNavigationView = HybridView<
-  MapboxTurnByTurnNavigationProps,
-  MapboxTurnByTurnNavigationMethods
->;
 export default function App() {
-  const [hybridRef, setHybridRef] = useState<MapboxNavigationView>();
+  const [hybridRef, setHybridRef] = useState<MapboxTurnByTurnNavigation>();
 
   useEffect(() => {
     let unsubscribeFromListeners: (() => void)[] = [];
@@ -66,7 +60,7 @@ export default function App() {
     <>
       <StatusBar barStyle="dark-content" />
       <View style={[styles.container]}>
-        <MapboxTurnByTurnNavigation
+        <MapboxTurnByTurnNavigationView
           hybridRef={{ f: (hRef) => setHybridRef(hRef) }}
           origin={{
             longitude: 5.058566,
