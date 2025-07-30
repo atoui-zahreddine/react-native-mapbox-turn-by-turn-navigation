@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
 
   s.dependency 'React-jsi'
   s.dependency 'React-callinvoker'
-  s.dependency 'MapboxNavigation'
+  s.dependency 'MapboxNavigation', '~> 2.20.1'
 
   load 'nitrogen/generated/ios/MapboxTurnByTurnNavigation+autolinking.rb'
   add_nitrogen_files(s)

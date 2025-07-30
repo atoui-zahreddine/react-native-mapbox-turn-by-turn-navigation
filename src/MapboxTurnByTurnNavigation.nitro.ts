@@ -60,9 +60,12 @@ export enum DistanceUnitEnum {
   METRIC = 'metric',
   IMPERIAL = 'imperial',
 }
-
 export type OnArrivalListener = (event: Coordinate) => void;
 export type OnWaypointArrivalListener = (event: WaypointEvent) => void;
+export type RouteProgressChangeListener = (event: RouteProgress) => void;
+export type LocationChangeListener = (event: LocationData) => void;
+export type OnErrorListener = (error: Message) => void;
+export type OnCancelListener = () => void;
 
 export interface MapboxTurnByTurnNavigationProps extends HybridViewProps {
   mute?: boolean;
@@ -78,10 +81,6 @@ export interface MapboxTurnByTurnNavigationProps extends HybridViewProps {
   showCancelButton?: boolean;
   hideStatusView?: boolean;
 }
-export type RouteProgressChangeListener = (event: RouteProgress) => void;
-export type LocationChangeListener = (event: LocationData) => void;
-export type OnErrorListener = (error: Message) => void;
-export type OnCancelListener = () => void;
 
 export interface MapboxTurnByTurnNavigationMethods extends HybridViewMethods {
   addOnWaypointArrivalListener(listener: OnWaypointArrivalListener): () => void;
