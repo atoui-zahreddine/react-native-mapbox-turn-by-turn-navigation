@@ -20,6 +20,9 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
 
+      - name: Run Nitrogen
+        run: yarn nitrogen
+
       - name: Lint files
         run: yarn lint
 
