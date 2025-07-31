@@ -1,3 +1,10 @@
+## [0.4.3](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/compare/v0.4.2...v0.4.3) (2025-07-31)
+
+
+### Bug Fixes
+
+* update URLs and minimum iOS version in configuration files ([2ea0f49](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/commit/2ea0f4966c877fd9c1b422d98df8d43e55af9107))
+
 ## [0.4.2](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/compare/v0.4.1...v0.4.2) (2025-07-30)
 
 
