@@ -170,6 +170,9 @@ jobs:
         with:
           xcode-version: ${{ env.XCODE_VERSION }}
 
+      - name: Install CocoaPods 1.16.2
+        run: sudo gem install cocoapods -v 1.16.2
+
       - name: Build example for iOS
         run: |
           yarn turbo run build:ios --cache-dir="${{ env.TURBO_CACHE_DIR }}"
