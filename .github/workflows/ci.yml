@@ -167,45 +167,6 @@ jobs:
         with:
           xcode-version: ${{ env.XCODE_VERSION }}
 
-      - name: Install cocoapods
-        if: env.turbo_cache_hit != 1
-        run: |
-          cd example
-          bundle install
-
-          # Retry logic for pod repo update with fallback
-          for i in {1..3}; do
-            echo "Attempt $i: Updating CocoaPods repos..."
-            if bundle exec pod repo update --verbose; then
-              echo "Pod repo update successful"
-              break
-            elif [ $i -eq 3 ]; then
-              echo "Pod repo update failed after 3 attempts, trying alternative approach..."
-              # Remove existing repos and re-add
-              bundle exec pod repo remove trunk || true
-              bundle exec pod repo add trunk https://github.com/CocoaPods/Specs.git --verbose || true
-              bundle exec pod repo update trunk --verbose || true
-            else
-              echo "Attempt $i failed, retrying in 10 seconds..."
-              sleep 10
-            fi
-          done
-
-          # Install pods with retry logic
-          for i in {1..3}; do
-            echo "Attempt $i: Installing CocoaPods dependencies..."
-            if bundle exec pod install --project-directory=ios --verbose; then
-              echo "Pod install successful"
-              break
-            elif [ $i -eq 3 ]; then
-              echo "Pod install failed after 3 attempts"
-              exit 1
-            else
-              echo "Attempt $i failed, retrying in 10 seconds..."
-              sleep 10
-            fi
-          done
-
       - name: Build example for iOS
         run: |
           yarn turbo run build:ios --cache-dir="${{ env.TURBO_CACHE_DIR }}"
