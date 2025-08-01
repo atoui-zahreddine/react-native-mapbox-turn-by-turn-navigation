@@ -27,15 +27,15 @@ try {
 }
 
 export type MapboxPlugProps = {
-  MapboxPublicToken?: string;
-  MapboxDownloadToken?: string;
+  mapboxPublicToken?: string;
+  mapboxDownloadsToken?: string;
 };
 
 const copyMapboxAccessTokenXml = (
   config: ExpoConfig,
   args: MapboxPlugProps
 ): ExpoConfig => {
-  if (!args.MapboxPublicToken) {
+  if (!args.mapboxPublicToken) {
     console.warn(
       'Mapbox Access Token is missing. Please provide MapboxPublicToken.'
     );
@@ -65,7 +65,7 @@ const copyMapboxAccessTokenXml = (
     // The content of the mapbox_access_token.xml file
     const xmlContent = `<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="mapbox_access_token">${args.MapboxPublicToken}</string>
+    <string name="mapbox_access_token">${args.mapboxPublicToken}</string>
 </resources>
 `;
 
@@ -144,11 +144,11 @@ export const addMapboxMavenRepo = (src: string): string =>
 
 const withAndroidPropertiesDownloadToken: ConfigPlugin<MapboxPlugProps> = (
   config,
-  { MapboxDownloadToken }
+  { mapboxDownloadsToken }
 ) => {
   const key = 'MAPBOX_DOWNLOADS_TOKEN';
 
-  if (MapboxDownloadToken) {
+  if (mapboxDownloadsToken) {
     return withGradleProperties(config, (exportedConfig) => {
       exportedConfig.modResults = exportedConfig.modResults.filter(
         (item) => !(item.type === 'property' && item.key === key)
@@ -156,7 +156,7 @@ const withAndroidPropertiesDownloadToken: ConfigPlugin<MapboxPlugProps> = (
       exportedConfig.modResults.push({
         type: 'property',
         key,
-        value: MapboxDownloadToken,
+        value: mapboxDownloadsToken,
       });
 
       return exportedConfig;
@@ -183,14 +183,16 @@ const withAndroidProjectGradle: ConfigPlugin<MapboxPlugProps> = (config) =>
 
 const withMapboxAndroid: ConfigPlugin<MapboxPlugProps> = (
   config,
-  { MapboxPublicToken, MapboxDownloadToken }
+  { mapboxPublicToken, mapboxDownloadsToken }
 ) => {
-  config = withAndroidProjectGradle(config, { MapboxDownloadToken });
+  config = withAndroidProjectGradle(config, {
+    mapboxDownloadsToken,
+  });
   config = withAndroidPropertiesDownloadToken(config, {
-    MapboxDownloadToken,
+    mapboxDownloadsToken,
   });
   config = copyMapboxAccessTokenXml(config, {
-    MapboxPublicToken,
+    mapboxPublicToken,
   });
 
   return config;
@@ -300,10 +302,10 @@ const withMapboxAndroid: ConfigPlugin<MapboxPlugProps> = (
 // };
 const withMapboxIOS: ConfigPlugin<MapboxPlugProps> = (
   config,
-  { MapboxPublicToken }
+  { mapboxPublicToken }
 ) => {
   config = withInfoPlist(config, (iosConfig) => {
-    if (!MapboxPublicToken) {
+    if (!mapboxPublicToken) {
       WarningAggregator.addWarningIOS(
         'withMapbox',
         'Mapbox Public Token is missing. Please provide MapboxPublicToken.'
@@ -312,7 +314,7 @@ const withMapboxIOS: ConfigPlugin<MapboxPlugProps> = (
     }
     if (iosConfig.modResults.MBXAccessToken) return iosConfig;
 
-    iosConfig.modResults.MBXAccessToken = MapboxPublicToken;
+    iosConfig.modResults.MBXAccessToken = mapboxPublicToken;
     return iosConfig;
   });
 
@@ -321,17 +323,17 @@ const withMapboxIOS: ConfigPlugin<MapboxPlugProps> = (
 
 const withMapbox: ConfigPlugin<MapboxPlugProps> = (
   config,
-  { MapboxPublicToken, MapboxDownloadToken }
+  { mapboxPublicToken, mapboxDownloadsToken }
 ) => {
   // Configure Android
   config = withMapboxAndroid(config, {
-    MapboxPublicToken,
-    MapboxDownloadToken,
+    mapboxPublicToken,
+    mapboxDownloadsToken,
   });
 
   // Configure iOS
   config = withMapboxIOS(config, {
-    MapboxPublicToken,
+    mapboxPublicToken,
   });
 
   return config;

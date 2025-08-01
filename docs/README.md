@@ -1,3 +1,7 @@
+**react-native-mapbox-turn-by-turn-navigation**
+
+***
+
 # React Native Mapbox Turn-by-Turn Navigation
 
 React Native module for Mapbox Navigation SDK, providing full turn-by-turn navigation functionality.
@@ -152,18 +156,11 @@ import { MapboxTurnByTurnNavigationView } from "react-native-mapbox-turn-by-turn
   }}
 />
 ```
-Please refer to the [example](example/src/App.tsx) project for more detailed usage and configuration options.
-
-## Docs
-
-For detailed documentation please refer to the [docs](docs/globals.md) directory.
-
-
-
+Please refer to the [example](_media/App.tsx) project for more detailed usage and configuration options.
 ## Contributing
 
-Contributions are welcome! Please see the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+Contributions are welcome! Please see the [contributing guide](_media/CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](_media/LICENSE) file for details.

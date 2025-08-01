@@ -34,7 +34,8 @@
     "typecheck": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
-    "prepare": "yarn nitrogen && bob build",
+    "docs": "typedoc",
+    "prepare": "yarn nitrogen && bob build && yarn typedoc",
     "nitrogen": "nitro-codegen",
     "semantic-release:ci": "semantic-release --ci"
   },
@@ -87,6 +88,8 @@
     "react-native-nitro-modules": "^0.27.2",
     "semantic-release": "^22.0.0",
     "turbo": "^1.10.7",
+    "typedoc": "^0.28.8",
+    "typedoc-plugin-markdown": "^4.8.0",
     "typescript": "^5.8.3"
   },
   "peerDependencies": {
