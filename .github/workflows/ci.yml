@@ -170,10 +170,10 @@ jobs:
         with:
           xcode-version: ${{ env.XCODE_VERSION }}
 
-      - name: Update CocoaPods to latest
+      - name: Pod install
         run: |
-          sudo gem update cocoapods
-          pod --version
+          cd example/ios
+          pod install --repo-update
 
       - name: Build example for iOS
         run: |
