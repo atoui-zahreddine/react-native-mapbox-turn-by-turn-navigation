@@ -5,6 +5,8 @@ import android.content.res.Configuration
 import android.content.res.Resources
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewTreeObserver
 import android.widget.FrameLayout
 import com.facebook.react.uimanager.ThemedReactContext
 import com.mapbox.api.directions.v5.DirectionsCriteria
@@ -290,7 +292,7 @@ class NavigationView(context: ThemedReactContext, private val implementation: Hy
     )
 
     Log.d(TAG, "Trip progress view updated")
-    binding.tripProgressView.render(tripProgressApi.getTripProgress(routeProgress))
+    updateTripProgressCard(tripProgressApi.getTripProgress(routeProgress))
 
     implementation.onRouteProgressChangeListener?.invoke(
       RouteProgress(
@@ -300,6 +302,19 @@ class NavigationView(context: ThemedReactContext, private val implementation: Hy
         durationRemaining = routeProgress.durationRemaining,
       )
     )
+  }
+
+  private fun updateTripProgressCard(tripProgressUpdateValue: TripProgressUpdateValue) {
+    // Update text values
+    val timeRemaining = tripProgressUpdateValue.formatter.getTimeRemaining(tripProgressUpdateValue.totalTimeRemaining)
+    val arrivalTime = tripProgressUpdateValue.formatter.getEstimatedTimeToArrival(tripProgressUpdateValue.estimatedTimeToArrival)
+    val distanceRemaining = tripProgressUpdateValue.formatter.getDistanceRemaining(tripProgressUpdateValue.distanceRemaining)
+    
+    binding.timeRemainingValue.text = timeRemaining
+    binding.arrivalTimeText.text = arrivalTime
+    binding.distanceRemainingText.text = distanceRemaining
+    
+    Log.d(TAG, "Trip progress updated: $timeRemaining, $distanceRemaining, $arrivalTime")
   }
 
   private val routesObserver = RoutesObserver { routeUpdateResult ->
@@ -362,6 +377,8 @@ class NavigationView(context: ThemedReactContext, private val implementation: Hy
     super.onAttachedToWindow()
     binding.mapView.requestLayout()
     binding.mapView.invalidate()
+    
+    Log.d(TAG, "NavigationView attached to window")
   }
 
   /**
@@ -439,7 +456,6 @@ class NavigationView(context: ThemedReactContext, private val implementation: Hy
     )
     speechApi = MapboxSpeechApi(context, locale.language)
     voiceInstructionsPlayer = MapboxVoiceInstructionsPlayer(context, locale.language)
-
     binding.stop.setOnClickListener {
       Log.d(TAG, "Stop button clicked")
       implementation.onCancelListener?.invoke()
@@ -562,12 +578,19 @@ class NavigationView(context: ThemedReactContext, private val implementation: Hy
   @SuppressLint("MissingPermission")
   private fun setRouteAndStartNavigation(routes: List<NavigationRoute>) {
     mapboxNavigation?.setNavigationRoutes(routes)
-    binding.soundButton.visibility = VISIBLE
-    binding.routeOverview.visibility = VISIBLE
-    binding.tripProgressCard.visibility = VISIBLE
-    mapboxNavigation?.startTripSession(withForegroundService = true)
-    mapboxNavigation?.startTripSession(withForegroundService = true)
+    
 
+    // Make UI elements visible
+    binding.soundButton.visibility = View.VISIBLE
+    binding.routeOverview.visibility = View.VISIBLE
+    
+    // Show trip progress card with a simple delay to ensure layout is ready
+    binding.tripProgressCard.postDelayed({
+      binding.tripProgressCard.visibility = View.VISIBLE
+      Log.d(TAG, "Trip progress card made visible")
+    }, 50) // Small delay to ensure layout is complete
+    
+    mapboxNavigation?.startTripSession(withForegroundService = true)
     Log.d(TAG, "Navigation started with ${routes.size} routes")
   }
 
