@@ -1,3 +1,10 @@
+# [0.5.0](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/compare/v0.4.3...v0.5.0) (2025-08-15)
+
+
+### Features
+
+* enhance trip progress UI with detailed time and distance information ([492e9d4](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/commit/492e9d416879ec75bec0517540167b8dcb60084e))
+
 ## [0.4.3](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/compare/v0.4.2...v0.4.3) (2025-07-31)
 
 
