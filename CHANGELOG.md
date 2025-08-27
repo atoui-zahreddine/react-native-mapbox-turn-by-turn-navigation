@@ -1,3 +1,10 @@
+# [0.6.0](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/compare/v0.5.0...v0.6.0) (2025-08-27)
+
+
+### Features
+
+* streamline event listener methods and update dependencies ([ef1cdab](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/commit/ef1cdaba4096e1410a4a07dd9f6a04a2212ed33f))
+
 # [0.5.0](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/compare/v0.4.3...v0.5.0) (2025-08-15)
 
 
