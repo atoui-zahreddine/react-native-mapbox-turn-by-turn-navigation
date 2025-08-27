@@ -62,6 +62,54 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:59
 
 ***
 
+### onArrival?
+
+> `optional` **onArrival**: [`OnArrivalListener`](../type-aliases/OnArrivalListener.md)
+
+Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:75
+
+***
+
+### onCancel?
+
+> `optional` **onCancel**: [`OnCancelListener`](../type-aliases/OnCancelListener.md)
+
+Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:73
+
+***
+
+### onError?
+
+> `optional` **onError**: [`OnErrorListener`](../type-aliases/OnErrorListener.md)
+
+Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:74
+
+***
+
+### onLocationChange?
+
+> `optional` **onLocationChange**: [`LocationChangeListener`](../type-aliases/LocationChangeListener.md)
+
+Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:71
+
+***
+
+### onRouteProgressChange?
+
+> `optional` **onRouteProgressChange**: [`RouteProgressChangeListener`](../type-aliases/RouteProgressChangeListener.md)
+
+Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:72
+
+***
+
+### onWaypointArrival?
+
+> `optional` **onWaypointArrival**: [`OnWaypointArrivalListener`](../type-aliases/OnWaypointArrivalListener.md)
+
+Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:76
+
+***
+
 ### origin
 
 > **origin**: [`Coordinate`](Coordinate.md)

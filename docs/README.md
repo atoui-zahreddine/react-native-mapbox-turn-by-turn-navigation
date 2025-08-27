@@ -92,7 +92,12 @@ This will automatically configure the necessary settings for Mapbox integration 
      <string>location</string>
    </array>
    ```
+5. Add NSLocationWhenInUseUsageDescription to `Info.plist` with a description of why your app needs access to the user's location.
 
+   ```
+   <key>NSLocationWhenInUseUsageDescription</key>
+   <string>This app requires access to your location for navigation purposes.</string>
+   ```
 * ### Android Specific Instructions
 
 1. Place your secret token in your android app's top level `gradle.properties` or `«USER_HOME»/.gradle/gradle.properties` file
@@ -132,6 +137,13 @@ This will automatically configure the necessary settings for Mapbox integration 
         <string name="mapbox_access_token" translatable="false" tools:ignore="UnusedResources">YOUR_MAPBOX_ACCESS_TOKEN</string>
     </resources>
    ```
+4. Add the following permissions to your `AndroidManifest.xml` file:
+
+   ```xml
+   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+   <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+   ```
 
    For more details installation you can read the [Official docs of Mapbox](https://docs.mapbox.com/android/navigation/guides/installation).
 
@@ -157,6 +169,11 @@ import { MapboxTurnByTurnNavigationView } from "react-native-mapbox-turn-by-turn
 />
 ```
 Please refer to the [example](_media/App.tsx) project for more detailed usage and configuration options.
+
+## Docs
+
+For detailed documentation please refer to the [docs](_media/globals.md) directory.
+
 ## Contributing
 
 Contributions are welcome! Please see the [contributing guide](_media/CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
