@@ -35,7 +35,7 @@
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
     "docs": "typedoc",
-    "prepare": "yarn nitrogen && bob build && yarn typedoc",
+    "prepare": "yarn nitrogen && yarn typedoc && bob build",
     "nitrogen": "nitro-codegen",
     "semantic-release:ci": "semantic-release --ci"
   },
