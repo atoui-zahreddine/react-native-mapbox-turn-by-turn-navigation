@@ -229,7 +229,7 @@ class NavigationView(context: ThemedReactContext, private val implementation: Hy
         Log.d(TAG, "First location update, camera set to overview")
       }
 
-      implementation.onLocationChangeListener?.invoke(
+      implementation.onLocationChange?.invoke(
         LocationData(
           latitude = enhancedLocation.latitude,
           longitude = enhancedLocation.longitude,
@@ -294,7 +294,7 @@ class NavigationView(context: ThemedReactContext, private val implementation: Hy
     Log.d(TAG, "Trip progress view updated")
     updateTripProgressCard(tripProgressApi.getTripProgress(routeProgress))
 
-    implementation.onRouteProgressChangeListener?.invoke(
+    implementation.onRouteProgressChange?.invoke(
       RouteProgress(
         distanceTraveled = routeProgress.distanceTraveled.toDouble(),
         distanceRemaining = routeProgress.distanceRemaining.toDouble(),
@@ -309,11 +309,11 @@ class NavigationView(context: ThemedReactContext, private val implementation: Hy
     val timeRemaining = tripProgressUpdateValue.formatter.getTimeRemaining(tripProgressUpdateValue.totalTimeRemaining)
     val arrivalTime = tripProgressUpdateValue.formatter.getEstimatedTimeToArrival(tripProgressUpdateValue.estimatedTimeToArrival)
     val distanceRemaining = tripProgressUpdateValue.formatter.getDistanceRemaining(tripProgressUpdateValue.distanceRemaining)
-    
+
     binding.timeRemainingValue.text = timeRemaining
     binding.arrivalTimeText.text = arrivalTime
     binding.distanceRemainingText.text = distanceRemaining
-    
+
     Log.d(TAG, "Trip progress updated: $timeRemaining, $distanceRemaining, $arrivalTime")
   }
 
@@ -377,7 +377,7 @@ class NavigationView(context: ThemedReactContext, private val implementation: Hy
     super.onAttachedToWindow()
     binding.mapView.requestLayout()
     binding.mapView.invalidate()
-    
+
     Log.d(TAG, "NavigationView attached to window")
   }
 
@@ -458,7 +458,7 @@ class NavigationView(context: ThemedReactContext, private val implementation: Hy
     voiceInstructionsPlayer = MapboxVoiceInstructionsPlayer(context, locale.language)
     binding.stop.setOnClickListener {
       Log.d(TAG, "Stop button clicked")
-      implementation.onCancelListener?.invoke()
+      implementation.onCancel?.invoke()
       mapboxNavigation?.stopTripSession()
     }
     binding.recenter.setOnClickListener {
@@ -578,18 +578,18 @@ class NavigationView(context: ThemedReactContext, private val implementation: Hy
   @SuppressLint("MissingPermission")
   private fun setRouteAndStartNavigation(routes: List<NavigationRoute>) {
     mapboxNavigation?.setNavigationRoutes(routes)
-    
+
 
     // Make UI elements visible
     binding.soundButton.visibility = View.VISIBLE
     binding.routeOverview.visibility = View.VISIBLE
-    
+
     // Show trip progress card with a simple delay to ensure layout is ready
     binding.tripProgressCard.postDelayed({
       binding.tripProgressCard.visibility = View.VISIBLE
       Log.d(TAG, "Trip progress card made visible")
     }, 50) // Small delay to ensure layout is complete
-    
+
     mapboxNavigation?.startTripSession(withForegroundService = true)
     Log.d(TAG, "Navigation started with ${routes.size} routes")
   }
@@ -628,7 +628,7 @@ class NavigationView(context: ThemedReactContext, private val implementation: Hy
       return
     }
     Log.d(TAG, "Arrived at destination, leg index: ${leg.legIndex}")
-    implementation.onWaypointArrivalListener?.invoke(
+    implementation.onWaypointArrival?.invoke(
       WaypointEvent(
         index = legIndex.toDouble(),
         latitude = latitude,
@@ -647,7 +647,7 @@ class NavigationView(context: ThemedReactContext, private val implementation: Hy
     Log.d(TAG, "Arrived at final destination")
     val longitude = routeProgress.currentLegProgress?.legDestination?.location?.latitude() ?: 0.0
     val latitude = routeProgress.currentLegProgress?.legDestination?.location?.latitude() ?: 0.0
-    implementation.onArrivalListener?.invoke(
+    implementation.onArrival?.invoke(
       Coordinate(
         latitude = latitude,
         longitude = longitude
@@ -661,7 +661,7 @@ class NavigationView(context: ThemedReactContext, private val implementation: Hy
    */
   fun sendErrorToJS(error: String) {
     Log.e(TAG, "Error: $error")
-    implementation.onErrorListener?.invoke(
+    implementation.onError?.invoke(
       Message(error)
     )
   }
@@ -671,17 +671,11 @@ class NavigationView(context: ThemedReactContext, private val implementation: Hy
   fun setOrigin(origin: Point?) {
     this.origin = origin
     Log.d(TAG, "Origin set: $origin")
-    if (this.destination != null && this.origin != null) {
-      startNavigation()
-    }
   }
 
   fun setDestination(destination: Point?) {
     this.destination = destination
     Log.d(TAG, "Destination set: $destination")
-    if (this.destination != null && this.origin != null) {
-      startNavigation()
-    }
   }
 
   fun setDestinationTitle(title: String) {

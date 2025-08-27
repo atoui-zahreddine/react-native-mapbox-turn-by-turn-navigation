@@ -80,18 +80,15 @@ export interface MapboxTurnByTurnNavigationProps extends HybridViewProps {
   showsEndOfRouteFeedback?: boolean;
   showCancelButton?: boolean;
   hideStatusView?: boolean;
+  onLocationChange?: LocationChangeListener;
+  onRouteProgressChange?: RouteProgressChangeListener;
+  onCancel?: OnCancelListener;
+  onError?: OnErrorListener;
+  onArrival?: OnArrivalListener;
+  onWaypointArrival?: OnWaypointArrivalListener;
 }
 
-export interface MapboxTurnByTurnNavigationMethods extends HybridViewMethods {
-  addOnWaypointArrivalListener(listener: OnWaypointArrivalListener): () => void;
-  addOnArrivalListener(listener: OnArrivalListener): () => void;
-  addOnLocationChangeListener(listener: LocationChangeListener): () => void;
-  addOnRouteProgressChangeListener(
-    listener: RouteProgressChangeListener
-  ): () => void;
-  addOnCancelListener(listener: OnCancelListener): () => void;
-  addOnErrorListener(listener: OnErrorListener): () => void;
-}
+export interface MapboxTurnByTurnNavigationMethods extends HybridViewMethods {}
 
 export type MapboxTurnByTurnNavigation = HybridView<
   MapboxTurnByTurnNavigationProps,

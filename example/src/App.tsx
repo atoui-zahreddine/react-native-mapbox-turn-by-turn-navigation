@@ -9,11 +9,15 @@ import {
 import { useEffect, useRef, useState } from 'react';
 import {
   MapboxTurnByTurnNavigationView,
-  type MapboxTurnByTurnNavigation,
+  type LocationData,
 } from 'react-native-mapbox-turn-by-turn-navigation';
+import type {
+  Coordinate,
+  RouteProgress,
+  WaypointEvent,
+} from '../../lib/typescript/src';
 
 export default function App() {
-  const [hybridRef, setHybridRef] = useState<MapboxTurnByTurnNavigation>();
   const isMountedRef = useRef<boolean>(true);
   const [ready, setReady] = useState(false);
 
@@ -44,53 +48,6 @@ export default function App() {
     };
   }, []);
 
-  useEffect(() => {
-    let unsubscribeFromListeners: (() => void)[] = [];
-
-    if (hybridRef) {
-      unsubscribeFromListeners.push(
-        hybridRef.addOnArrivalListener((event) => {
-          console.log('Arrived at destination:', event);
-        })
-      );
-      unsubscribeFromListeners.push(
-        hybridRef.addOnWaypointArrivalListener((event) => {
-          console.log('Arrived at waypoint:', event);
-        })
-      );
-      unsubscribeFromListeners.push(
-        hybridRef.addOnLocationChangeListener((event) => {
-          console.log('Location changed:', event);
-        })
-      );
-      unsubscribeFromListeners.push(
-        hybridRef.addOnRouteProgressChangeListener((event) => {
-          console.log('Route progress changed:', event);
-        })
-      );
-      unsubscribeFromListeners.push(
-        hybridRef.addOnErrorListener((error) => {
-          console.error('Error occurred:', error);
-        })
-      );
-      unsubscribeFromListeners.push(
-        hybridRef.addOnCancelListener(() => {
-          console.log('Navigation cancelled');
-        })
-      );
-    }
-
-    return () => {
-      console.log('Cleaning up listeners');
-      if (unsubscribeFromListeners.length > 0) {
-        unsubscribeFromListeners.forEach(
-          (unsubscribe) => typeof unsubscribe === 'function' && unsubscribe()
-        );
-        unsubscribeFromListeners = [];
-      }
-    };
-  }, [hybridRef]);
-
   if (!ready) {
     return <View style={styles.container} />;
   }
@@ -101,14 +58,38 @@ export default function App() {
       <View style={styles.container}>
         <MapboxTurnByTurnNavigationView
           style={styles.mapboxView}
-          hybridRef={{ f: (hRef) => setHybridRef(hRef) }}
           origin={{
+            longitude: 5.082325,
+            latitude: 51.558588,
+          }}
+          destination={{
             longitude: 5.058566,
             latitude: 51.560985,
           }}
-          destination={{
-            longitude: 5.082325,
-            latitude: 51.558588,
+          onLocationChange={{
+            f: (event: LocationData) => {
+              console.log('Location changed:', event);
+            },
+          }}
+          onCancel={{
+            f: () => {
+              console.log('Navigation cancelled');
+            },
+          }}
+          onArrival={{
+            f: (coordinates: Coordinate) => {
+              console.log('Arrived at destination:', coordinates);
+            },
+          }}
+          onWaypointArrival={{
+            f: (event: WaypointEvent) => {
+              console.log('Arrived at waypoint:', event);
+            },
+          }}
+          onRouteProgressChange={{
+            f: (event: RouteProgress) => {
+              console.log('Route progress changed:', event);
+            },
           }}
         />
       </View>

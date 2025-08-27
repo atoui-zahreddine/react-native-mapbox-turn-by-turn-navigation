@@ -83,55 +83,12 @@ class HybridMapboxTurnByTurnNavigation(val context: ThemedReactContext) : Hybrid
   override var showsEndOfRouteFeedback: Boolean? = null
   override var showCancelButton: Boolean? = null
   override var hideStatusView: Boolean? = null
-
-  var onWaypointArrivalListener: ((WaypointEvent) -> Unit)? = null
-  var onArrivalListener: ((Coordinate) -> Unit)? = null
-  var onLocationChangeListener: ((LocationData) -> Unit)? = null
-  var onRouteProgressChangeListener: ((RouteProgress) -> Unit)? = null
-  var onCancelListener: (() -> Unit)? = null
-  var onErrorListener: ((Message) -> Unit)? = null
-
-  override fun addOnWaypointArrivalListener(listener: (WaypointEvent) -> Unit): () -> Unit {
-    onWaypointArrivalListener = listener
-    return {
-      onWaypointArrivalListener = null
-    }
-  }
-
-  override fun addOnArrivalListener(listener: (Coordinate) -> Unit): () -> Unit {
-    onArrivalListener = listener
-    return {
-      onArrivalListener = null
-    }
-  }
-
-  override fun addOnLocationChangeListener(listener: (LocationData) -> Unit): () -> Unit {
-    onLocationChangeListener = listener
-    return {
-      onLocationChangeListener = null
-    }
-  }
-
-  override fun addOnRouteProgressChangeListener(listener: (RouteProgress) -> Unit): () -> Unit {
-    onRouteProgressChangeListener = listener
-    return {
-      onRouteProgressChangeListener = null
-    }
-  }
-
-  override fun addOnCancelListener(listener: () -> Unit): () -> Unit {
-    onCancelListener = listener
-    return {
-      onCancelListener = null
-    }
-  }
-
-  override fun addOnErrorListener(listener: (Message) -> Unit): () -> Unit {
-    onErrorListener = listener
-    return {
-      onErrorListener = null
-    }
-  }
+  override var onLocationChange: ((LocationData) -> Unit)?=null
+  override var onRouteProgressChange: ((RouteProgress) -> Unit)?=null
+  override var onCancel: (() -> Unit)?=null
+  override var onError: ((Message) -> Unit)?=null
+  override var onArrival: ((Coordinate) -> Unit)?=null
+  override var onWaypointArrival: ((WaypointEvent) -> Unit)?=null
 
   override fun afterUpdate() {
     super.afterUpdate()

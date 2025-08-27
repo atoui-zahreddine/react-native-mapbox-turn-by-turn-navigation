@@ -11,7 +11,7 @@ PODS:
   - MapboxCommon (23.11.4)
   - MapboxCoreMaps (10.19.2):
     - MapboxCommon (~> 23.11)
-  - MapboxCoreNavigation (2.20.1):
+  - MapboxCoreNavigation (2.20.2):
     - MapboxDirections (~> 2.14)
     - MapboxNavigationNative (< 207.0.0, >= 206.0.1)
   - MapboxDirections (2.14.2):
@@ -23,19 +23,19 @@ PODS:
     - MapboxMobileEvents (= 2.0.0)
     - Turf (= 2.8.0)
   - MapboxMobileEvents (2.0.0)
-  - MapboxNavigation (2.20.1):
-    - MapboxCoreNavigation (= 2.20.1)
+  - MapboxNavigation (2.20.2):
+    - MapboxCoreNavigation (= 2.20.2)
     - MapboxMaps (~> 10.19)
     - MapboxSpeech (~> 2.0)
     - Solar-dev (~> 3.0)
   - MapboxNavigationNative (206.1.1):
     - MapboxCommon (~> 23.10)
   - MapboxSpeech (2.1.1)
-  - MapboxTurnByTurnNavigation (0.1.0):
+  - MapboxTurnByTurnNavigation (0.5.0):
     - DoubleConversion
     - glog
     - hermes-engine
-    - MapboxNavigation
+    - MapboxNavigation (~> 2.20.1)
     - NitroModules
     - RCT-Folly (= 2024.11.18.00)
     - RCTRequired
@@ -58,7 +58,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - NitroModules (0.26.4):
+  - NitroModules (0.28.1):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1984,15 +1984,15 @@ SPEC CHECKSUMS:
   hermes-engine: 314be5250afa5692b57b4dd1705959e1973a8ebe
   MapboxCommon: cc47fafe3fe5408ca49240aa80fa64f27f275711
   MapboxCoreMaps: 35685edba03e44468aed57c3dfd7f8795edafda8
-  MapboxCoreNavigation: 7c260c25ae230f57f706ebdd6c3e9e285e84a59e
+  MapboxCoreNavigation: ccc186496b0272d9fe93d4bee49dbf64e798dcd5
   MapboxDirections: d4fe7d43cff82aa0c15955d1b4563a5a01e2d4de
   MapboxMaps: f87023cf0d72b180b40ea0b6fb4b2d7db6b73b71
   MapboxMobileEvents: d044b9edbe0ec7df60f6c2c9634fe9a7f449266b
-  MapboxNavigation: 0cd433c48d84c369ded6fdfa7a30b03df5292e3f
+  MapboxNavigation: 2f7e7ebb55cdc0b1efd48dc004e2e70c9d43006b
   MapboxNavigationNative: d898e5882007b6caea5af158b0dffb7c75e7641d
   MapboxSpeech: cd25ef99c3a3d2e0da72620ff558276ea5991a77
-  MapboxTurnByTurnNavigation: 74e676ad4c8c06df980bde4af08fb80c70b38178
-  NitroModules: 763fe03c46a734a615e648ff2c77158cd26d8f89
+  MapboxTurnByTurnNavigation: 15c8e59ec9e58659fa79fa4f69795aeef21ebe42
+  NitroModules: bc2dab0712fcd1a91aaafcd3a7a0c060cd1a7294
   Polyline: 2a1f29f87f8d9b7de868940f4f76deb8c678a5b1
   RCT-Folly: e78785aa9ba2ed998ea4151e314036f6c49e6d82
   RCTDeprecation: 83ffb90c23ee5cea353bd32008a7bca100908f8c

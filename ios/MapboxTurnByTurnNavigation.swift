@@ -26,11 +26,6 @@ extension UIView {
 class CustomUIView: UIView {
   private var implementation: HybridMapboxTurnByTurnNavigation!
 
-  // Using `weak` here can help prevent a strong reference cycle
-  // if `CustomUIView` is ever strongly retained by `HybridMapboxTurnByTurnNavigation`
-  // and `implementation` also strongly retains `CustomUIView`.
-  // However, given your current setup (view property), it's probably fine as strong.
-  // Consider weak only if you notice retain cycles.
   init(with implementation: HybridMapboxTurnByTurnNavigation) {
     self.implementation = implementation
     super.init(frame: .zero)  // Call super's initializer
@@ -54,6 +49,8 @@ class CustomUIView: UIView {
 class HybridMapboxTurnByTurnNavigation: HybridMapboxTurnByTurnNavigationSpec,
   NavigationViewControllerDelegate
 {
+  
+  
 
   var view: UIView = UIView()
 
@@ -62,56 +59,13 @@ class HybridMapboxTurnByTurnNavigation: HybridMapboxTurnByTurnNavigationSpec,
     self.view = CustomUIView(with: self)
   }
 
-  private var onLocationChange: ((LocationData) -> Void)? = nil
-  private var onRouteProgressChange: ((RouteProgress) -> Void)? = nil
-  private var onCancel: (() -> Void)? = nil
-  private var onError: ((Message) -> Void)? = nil
-  private var onWaypointArrival: ((WaypointEvent) -> Void)? = nil
-  private var onArrival: ((Coordinate) -> Void)? = nil
+  internal var onLocationChange: ((LocationData) -> Void)?
+  internal var onRouteProgressChange: ((RouteProgress) -> Void)?
+  internal var onCancel: (() -> Void)? = nil
+  internal var onError: ((Message) -> Void)? = nil
+  internal var onWaypointArrival: ((WaypointEvent) -> Void)? = nil
+  internal var onArrival: ((Coordinate) -> Void)? = nil
 
-  func addOnLocationChangeListener(listener: @escaping (LocationData) -> Void) throws -> () ->
-    Void
-  {
-    onLocationChange = listener
-    return { [weak self] in
-      self?.onLocationChange = nil
-    }
-  }
-  func addOnRouteProgressChangeListener(listener: @escaping (RouteProgress) -> Void) throws -> () ->
-    Void
-  {
-    onRouteProgressChange = listener
-    return { [weak self] in
-      self?.onRouteProgressChange = nil
-    }
-  }
-  func addOnCancelListener(listener: @escaping () -> Void) throws -> () -> Void {
-    onCancel = listener
-    return { [weak self] in
-      self?.onCancel = nil
-    }
-  }
-  func addOnErrorListener(listener: @escaping (Message) -> Void) throws -> () -> Void {
-    onError = listener
-    return { [weak self] in
-      self?.onError = nil
-    }
-  }
-  func addOnWaypointArrivalListener(listener: @escaping (WaypointEvent) -> Void) throws -> () ->
-    Void
-  {
-    onWaypointArrival = listener
-    return { [weak self] in
-      self?.onWaypointArrival = nil
-    }
-  }
-
-  func addOnArrivalListener(listener: @escaping (Coordinate) -> Void) throws -> () -> Void {
-    onArrival = listener
-    return { [weak self] in
-      self?.onArrival = nil
-    }
-  }
 
   var origin: Coordinate = Coordinate(latitude: 0, longitude: 0)
   var destination: Coordinate = Coordinate(latitude: 0, longitude: 0)
@@ -248,25 +202,33 @@ class HybridMapboxTurnByTurnNavigation: HybridMapboxTurnByTurnNavigationSpec,
     didArriveAt waypoint: MapboxDirections.Waypoint
   ) -> Bool {
 
-    if waypoint.coordinate.latitude == destination.latitude
-      && waypoint.coordinate.longitude == destination.longitude
+    // Use small tolerance for coordinate comparison to handle precision differences
+    let latDiff = Swift.abs(waypoint.coordinate.latitude - destination.latitude)
+    let lngDiff = Swift.abs(waypoint.coordinate.longitude - destination.longitude)
+    // Use a tolerance of about 1 meter (0.00001 degrees ≈ 1.1 meters)
+    if latDiff < 0.00001 && lngDiff < 0.00001
     {
+      // Return original destination coordinates instead of SDK processed coordinates
       let waypointData = Coordinate(
-        latitude: waypoint.coordinate.latitude, longitude: waypoint.coordinate.longitude)
+        latitude: destination.latitude, longitude: destination.longitude)
       onArrival?(waypointData)
-      return false
     } else {
+      // Find the original waypoint using tolerance-based coordinate comparison
       let waypointIndex =
-        waypoints?.firstIndex(where: {
-          $0.latitude == waypoint.coordinate.latitude
-            && $0.longitude == waypoint.coordinate.longitude
+        waypoints?.firstIndex(where: { originalWaypoint in
+          let latDiff = Swift.abs(originalWaypoint.latitude - waypoint.coordinate.latitude)
+          let lngDiff = Swift.abs(originalWaypoint.longitude - waypoint.coordinate.longitude)
+          // Use a tolerance of about 1 meter (0.00001 degrees ≈ 1.1 meters)
+          return latDiff < 0.00001 && lngDiff < 0.00001
         }) ?? -1
-      if waypointIndex != -1 {
+      
+      if waypointIndex != -1, let originalWaypoint = waypoints?[waypointIndex] {
+        // Return original waypoint coordinates instead of SDK processed coordinates
         let waypointData = WaypointEvent(
           name: waypoint.name,
           index: Double(waypointIndex),
-          latitude: waypoint.coordinate.latitude,
-          longitude: waypoint.coordinate.longitude,
+          latitude: originalWaypoint.latitude,
+          longitude: originalWaypoint.longitude,
         )
         onWaypointArrival?(waypointData)
       }
