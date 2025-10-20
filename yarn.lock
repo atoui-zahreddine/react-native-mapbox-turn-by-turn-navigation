@@ -12724,7 +12724,7 @@ __metadata:
     react-native-builder-bob: ^0.40.13
     react-native-mapbox-turn-by-turn-navigation: "workspace:^"
     react-native-monorepo-config: ^0.1.9
-    react-native-nitro-modules: ^0.28.1
+    react-native-nitro-modules: ^0.31.0
   languageName: unknown
   linkType: soft
 
@@ -12768,7 +12768,7 @@ __metadata:
   peerDependencies:
     react: "*"
     react-native: "*"
-    react-native-nitro-modules: ^0.28.1
+    react-native-nitro-modules: ^0.31.0
   languageName: unknown
   linkType: soft
 
@@ -12782,7 +12782,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-nitro-modules@npm:0.31.0":
+"react-native-nitro-modules@npm:0.31.0, react-native-nitro-modules@npm:^0.31.0":
   version: 0.31.0
   resolution: "react-native-nitro-modules@npm:0.31.0"
   peerDependencies:
