@@ -1,3 +1,10 @@
+## [0.7.1](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/compare/v0.7.0...v0.7.1) (2025-10-20)
+
+
+### Bug Fixes
+
+* update nitrogen to 0.31.0 ([cbe42cb](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/commit/cbe42cb4e1a6bbd6aad83bef864492cd65a708b2))
+
 # [0.7.0](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/compare/v0.6.0...v0.7.0) (2025-10-20)
 
 
