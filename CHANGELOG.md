@@ -1,3 +1,11 @@
+# [0.7.0](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/compare/v0.6.0...v0.7.0) (2025-10-20)
+
+
+### Features
+
+* upgrade mapbox navigation to 3.12.2 ([5bc7479](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/commit/5bc74792602bd351aa58e3f673694479d3ae9132))
+* upgrade nitro to 0.31.0 ([8c8ba19](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/commit/8c8ba193ef98e052419b14e66f4a0c8edc4ee6fa))
+
 # [0.6.0](https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/compare/v0.5.0...v0.6.0) (2025-08-27)
 
 
