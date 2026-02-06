@@ -1,12 +1,12 @@
-[**react-native-mapbox-turn-by-turn-navigation**](../README.md)
+[**rn-nitro-mapbox-navigation**](../README.md)
 
 ***
 
-[react-native-mapbox-turn-by-turn-navigation](../globals.md) / LocationData
+[rn-nitro-mapbox-navigation](../globals.md) / LocationData
 
 # Interface: LocationData
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:26
+Defined in: NitroMapboxNavigation.nitro.d.ts:26
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:26
 
 > **accuracy**: `number`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:30
+Defined in: NitroMapboxNavigation.nitro.d.ts:30
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:30
 
 > **heading**: `number`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:29
+Defined in: NitroMapboxNavigation.nitro.d.ts:29
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:29
 
 > **latitude**: `number`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:27
+Defined in: NitroMapboxNavigation.nitro.d.ts:27
 
 ***
 
@@ -38,7 +38,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:27
 
 > **longitude**: `number`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:28
+Defined in: NitroMapboxNavigation.nitro.d.ts:28
 
 ***
 
@@ -46,4 +46,4 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:28
 
 > **timestamp**: `number`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:31
+Defined in: NitroMapboxNavigation.nitro.d.ts:31

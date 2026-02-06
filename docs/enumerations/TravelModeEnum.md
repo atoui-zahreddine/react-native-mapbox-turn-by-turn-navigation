@@ -1,12 +1,12 @@
-[**react-native-mapbox-turn-by-turn-navigation**](../README.md)
+[**rn-nitro-mapbox-navigation**](../README.md)
 
 ***
 
-[react-native-mapbox-turn-by-turn-navigation](../globals.md) / TravelModeEnum
+[rn-nitro-mapbox-navigation](../globals.md) / TravelModeEnum
 
 # Enumeration: TravelModeEnum
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:42
+Defined in: NitroMapboxNavigation.nitro.d.ts:42
 
 ## Enumeration Members
 
@@ -14,7 +14,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:42
 
 > **CYCLING**: `"cycling"`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:45
+Defined in: NitroMapboxNavigation.nitro.d.ts:45
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:45
 
 > **DRIVING**: `"driving"`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:43
+Defined in: NitroMapboxNavigation.nitro.d.ts:43
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:43
 
 > **DRIVING\_TRAFFIC**: `"driving-traffic"`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:46
+Defined in: NitroMapboxNavigation.nitro.d.ts:46
 
 ***
 
@@ -38,4 +38,4 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:46
 
 > **WALKING**: `"walking"`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:44
+Defined in: NitroMapboxNavigation.nitro.d.ts:44

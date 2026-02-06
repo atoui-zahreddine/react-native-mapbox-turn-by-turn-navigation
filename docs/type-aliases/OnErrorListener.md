@@ -1,14 +1,14 @@
-[**react-native-mapbox-turn-by-turn-navigation**](../README.md)
+[**rn-nitro-mapbox-navigation**](../README.md)
 
 ***
 
-[react-native-mapbox-turn-by-turn-navigation](../globals.md) / OnErrorListener
+[rn-nitro-mapbox-navigation](../globals.md) / OnErrorListener
 
 # Type Alias: OnErrorListener()
 
 > **OnErrorListener** = (`error`) => `void`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:56
+Defined in: NitroMapboxNavigation.nitro.d.ts:56
 
 ## Parameters
 

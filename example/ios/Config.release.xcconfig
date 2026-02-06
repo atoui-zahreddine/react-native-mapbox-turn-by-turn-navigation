@@ -1,0 +1,3 @@
+#include "Pods/Target Support Files/Pods-NitroMapboxNavigationExample/Pods-NitroMapboxNavigationExample.release.xcconfig"
+#include "Config.local.xcconfig"
+

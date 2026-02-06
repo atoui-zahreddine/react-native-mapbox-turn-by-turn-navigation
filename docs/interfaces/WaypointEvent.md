@@ -1,12 +1,12 @@
-[**react-native-mapbox-turn-by-turn-navigation**](../README.md)
+[**rn-nitro-mapbox-navigation**](../README.md)
 
 ***
 
-[react-native-mapbox-turn-by-turn-navigation](../globals.md) / WaypointEvent
+[rn-nitro-mapbox-navigation](../globals.md) / WaypointEvent
 
 # Interface: WaypointEvent
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:14
+Defined in: NitroMapboxNavigation.nitro.d.ts:14
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:14
 
 > `optional` **index**: `number`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:24
+Defined in: NitroMapboxNavigation.nitro.d.ts:24
 
 Index of legs/waypoint
 
@@ -32,7 +32,7 @@ Android
 
 > **latitude**: `number`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:3
+Defined in: NitroMapboxNavigation.nitro.d.ts:3
 
 #### Inherited from
 
@@ -44,7 +44,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:3
 
 > **longitude**: `number`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:4
+Defined in: NitroMapboxNavigation.nitro.d.ts:4
 
 #### Inherited from
 
@@ -56,7 +56,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:4
 
 > `optional` **name**: `string`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:19
+Defined in: NitroMapboxNavigation.nitro.d.ts:19
 
 Name of Waypoint if provided or index of legs/waypoint
 

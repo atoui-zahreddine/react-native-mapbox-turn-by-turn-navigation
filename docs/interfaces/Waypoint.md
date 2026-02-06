@@ -1,12 +1,12 @@
-[**react-native-mapbox-turn-by-turn-navigation**](../README.md)
+[**rn-nitro-mapbox-navigation**](../README.md)
 
 ***
 
-[react-native-mapbox-turn-by-turn-navigation](../globals.md) / Waypoint
+[rn-nitro-mapbox-navigation](../globals.md) / Waypoint
 
 # Interface: Waypoint
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:6
+Defined in: NitroMapboxNavigation.nitro.d.ts:6
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:6
 
 > **latitude**: `number`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:3
+Defined in: NitroMapboxNavigation.nitro.d.ts:3
 
 #### Inherited from
 
@@ -30,7 +30,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:3
 
 > **longitude**: `number`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:4
+Defined in: NitroMapboxNavigation.nitro.d.ts:4
 
 #### Inherited from
 
@@ -42,7 +42,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:4
 
 > `optional` **name**: `string`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:7
+Defined in: NitroMapboxNavigation.nitro.d.ts:7
 
 ***
 
@@ -50,7 +50,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:7
 
 > `optional` **separatesLegs**: `boolean`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:12
+Defined in: NitroMapboxNavigation.nitro.d.ts:12
 
 Indicates whether the `onArrive` event is triggered when reaching the waypoint effectively.
 

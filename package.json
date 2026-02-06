@@ -1,5 +1,5 @@
 {
-  "name": "react-native-mapbox-turn-by-turn-navigation",
+  "name": "rn-nitro-mapbox-navigation",
   "version": "0.7.1",
   "description": "React native module for Mapbox Navigation SDK v3 with full turn-by-turn navigation support.",
   "main": "lib/commonjs/index",
@@ -29,7 +29,7 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace react-native-mapbox-turn-by-turn-navigation-example",
+    "example": "yarn workspace rn-nitro-mapbox-navigation-example",
     "test": "jest",
     "typecheck": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
@@ -46,14 +46,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation.git"
+    "url": "git+https://github.com/atoui-zahreddine/rn-nitro-mapbox-navigation.git"
   },
   "author": "Zahreddine Atoui <at.zahreddine@gmail.com> (https://github.com/atoui-zahreddine)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation/issues"
+    "url": "https://github.com/atoui-zahreddine/rn-nitro-mapbox-navigation/issues"
   },
-  "homepage": "https://github.com/atoui-zahreddine/react-native-mapbox-turn-by-turn-navigation#readme",
+  "homepage": "https://github.com/atoui-zahreddine/rn-nitro-mapbox-navigation#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

@@ -1,14 +1,14 @@
-[**react-native-mapbox-turn-by-turn-navigation**](../README.md)
+[**rn-nitro-mapbox-navigation**](../README.md)
 
 ***
 
-[react-native-mapbox-turn-by-turn-navigation](../globals.md) / OnArrivalListener
+[rn-nitro-mapbox-navigation](../globals.md) / OnArrivalListener
 
 # Type Alias: OnArrivalListener()
 
 > **OnArrivalListener** = (`event`) => `void`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:52
+Defined in: NitroMapboxNavigation.nitro.d.ts:52
 
 ## Parameters
 

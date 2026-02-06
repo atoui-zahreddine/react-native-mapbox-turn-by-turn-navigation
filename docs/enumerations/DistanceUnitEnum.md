@@ -1,12 +1,12 @@
-[**react-native-mapbox-turn-by-turn-navigation**](../README.md)
+[**rn-nitro-mapbox-navigation**](../README.md)
 
 ***
 
-[react-native-mapbox-turn-by-turn-navigation](../globals.md) / DistanceUnitEnum
+[rn-nitro-mapbox-navigation](../globals.md) / DistanceUnitEnum
 
 # Enumeration: DistanceUnitEnum
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:48
+Defined in: NitroMapboxNavigation.nitro.d.ts:48
 
 ## Enumeration Members
 
@@ -14,7 +14,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:48
 
 > **IMPERIAL**: `"imperial"`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:50
+Defined in: NitroMapboxNavigation.nitro.d.ts:50
 
 ***
 
@@ -22,4 +22,4 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:50
 
 > **METRIC**: `"metric"`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:49
+Defined in: NitroMapboxNavigation.nitro.d.ts:49

@@ -1,12 +1,12 @@
-[**react-native-mapbox-turn-by-turn-navigation**](../README.md)
+[**rn-nitro-mapbox-navigation**](../README.md)
 
 ***
 
-[react-native-mapbox-turn-by-turn-navigation](../globals.md) / MapboxTurnByTurnNavigationProps
+[rn-nitro-mapbox-navigation](../globals.md) / NitroMapboxNavigationProps
 
-# Interface: MapboxTurnByTurnNavigationProps
+# Interface: NitroMapboxNavigationProps
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:58
+Defined in: NitroMapboxNavigation.nitro.d.ts:58
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:58
 
 > **destination**: [`Coordinate`](Coordinate.md)
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:63
+Defined in: NitroMapboxNavigation.nitro.d.ts:63
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:63
 
 > `optional` **destinationTitle**: `string`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:62
+Defined in: NitroMapboxNavigation.nitro.d.ts:62
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:62
 
 > `optional` **distanceUnit**: [`DistanceUnitEnum`](../enumerations/DistanceUnitEnum.md)
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:60
+Defined in: NitroMapboxNavigation.nitro.d.ts:60
 
 ***
 
@@ -42,7 +42,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:60
 
 > `optional` **hideStatusView**: `boolean`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:70
+Defined in: NitroMapboxNavigation.nitro.d.ts:70
 
 ***
 
@@ -50,7 +50,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:70
 
 > `optional` **language**: `string`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:64
+Defined in: NitroMapboxNavigation.nitro.d.ts:64
 
 ***
 
@@ -58,7 +58,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:64
 
 > `optional` **mute**: `boolean`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:59
+Defined in: NitroMapboxNavigation.nitro.d.ts:59
 
 ***
 
@@ -66,7 +66,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:59
 
 > `optional` **onArrival**: [`OnArrivalListener`](../type-aliases/OnArrivalListener.md)
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:75
+Defined in: NitroMapboxNavigation.nitro.d.ts:75
 
 ***
 
@@ -74,7 +74,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:75
 
 > `optional` **onCancel**: [`OnCancelListener`](../type-aliases/OnCancelListener.md)
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:73
+Defined in: NitroMapboxNavigation.nitro.d.ts:73
 
 ***
 
@@ -82,7 +82,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:73
 
 > `optional` **onError**: [`OnErrorListener`](../type-aliases/OnErrorListener.md)
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:74
+Defined in: NitroMapboxNavigation.nitro.d.ts:74
 
 ***
 
@@ -90,7 +90,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:74
 
 > `optional` **onLocationChange**: [`LocationChangeListener`](../type-aliases/LocationChangeListener.md)
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:71
+Defined in: NitroMapboxNavigation.nitro.d.ts:71
 
 ***
 
@@ -98,7 +98,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:71
 
 > `optional` **onRouteProgressChange**: [`RouteProgressChangeListener`](../type-aliases/RouteProgressChangeListener.md)
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:72
+Defined in: NitroMapboxNavigation.nitro.d.ts:72
 
 ***
 
@@ -106,7 +106,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:72
 
 > `optional` **onWaypointArrival**: [`OnWaypointArrivalListener`](../type-aliases/OnWaypointArrivalListener.md)
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:76
+Defined in: NitroMapboxNavigation.nitro.d.ts:76
 
 ***
 
@@ -114,7 +114,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:76
 
 > **origin**: [`Coordinate`](Coordinate.md)
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:61
+Defined in: NitroMapboxNavigation.nitro.d.ts:61
 
 ***
 
@@ -122,7 +122,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:61
 
 > `optional` **shouldSimulateRoute**: `boolean`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:66
+Defined in: NitroMapboxNavigation.nitro.d.ts:66
 
 ***
 
@@ -130,7 +130,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:66
 
 > `optional` **showCancelButton**: `boolean`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:69
+Defined in: NitroMapboxNavigation.nitro.d.ts:69
 
 ***
 
@@ -138,7 +138,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:69
 
 > `optional` **showsEndOfRouteFeedback**: `boolean`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:68
+Defined in: NitroMapboxNavigation.nitro.d.ts:68
 
 ***
 
@@ -146,7 +146,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:68
 
 > `optional` **travelMode**: [`TravelModeEnum`](../enumerations/TravelModeEnum.md)
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:65
+Defined in: NitroMapboxNavigation.nitro.d.ts:65
 
 ***
 
@@ -154,4 +154,4 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:65
 
 > `optional` **waypoints**: [`Waypoint`](Waypoint.md)[]
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:67
+Defined in: NitroMapboxNavigation.nitro.d.ts:67

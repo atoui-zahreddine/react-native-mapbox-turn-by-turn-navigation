@@ -24,9 +24,9 @@ extension UIView {
 }
 // Your CustomUIView (no changes needed here for the fix)
 class CustomUIView: UIView {
-  private var implementation: HybridMapboxTurnByTurnNavigation!
+  private var implementation: HybridNitroMapboxNavigation!
 
-  init(with implementation: HybridMapboxTurnByTurnNavigation) {
+  init(with implementation: HybridNitroMapboxNavigation) {
     self.implementation = implementation
     super.init(frame: .zero)  // Call super's initializer
   }
@@ -46,7 +46,7 @@ class CustomUIView: UIView {
   }
 }
 
-class HybridMapboxTurnByTurnNavigation: HybridMapboxTurnByTurnNavigationSpec,
+class HybridNitroMapboxNavigation: HybridNitroMapboxNavigationSpec,
   NavigationViewControllerDelegate
 {
   
