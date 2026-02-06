@@ -8112,6 +8112,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"glob@npm:^10.5.0":
+  version: 10.5.0
+  resolution: "glob@npm:10.5.0"
+  dependencies:
+    foreground-child: ^3.1.0
+    jackspeak: ^3.1.2
+    minimatch: ^9.0.4
+    minipass: ^7.1.2
+    package-json-from-dist: ^1.0.0
+    path-scurry: ^1.11.1
+  bin:
+    glob: dist/esm/bin.mjs
+  checksum: cda96c074878abca9657bd984d2396945cf0d64283f6feeb40d738fe2da642be0010ad5210a1646244a5fc3511b0cab5a374569b3de5a12b8a63d392f18c6043
+  languageName: node
+  linkType: hard
+
 "glob@npm:^7.1.1, glob@npm:^7.1.3, glob@npm:^7.1.4, glob@npm:^7.2.0":
   version: 7.2.3
   resolution: "glob@npm:7.2.3"
@@ -8123,19 +8139,6 @@ __metadata:
     once: ^1.3.0
     path-is-absolute: ^1.0.0
   checksum: 29452e97b38fa704dabb1d1045350fb2467cf0277e155aa9ff7077e90ad81d1ea9d53d3ee63bd37c05b09a065e90f16aec4a65f5b8de401d1dac40bc5605d133
-  languageName: node
-  linkType: hard
-
-"glob@npm:^8.0.3":
-  version: 8.1.0
-  resolution: "glob@npm:8.1.0"
-  dependencies:
-    fs.realpath: ^1.0.0
-    inflight: ^1.0.4
-    inherits: 2
-    minimatch: ^5.0.1
-    once: ^1.3.0
-  checksum: 92fbea3221a7d12075f26f0227abac435de868dd0736a17170663783296d0dd8d3d532a5672b4488a439bf5d7fb85cdd07c11185d6cd39184f0385cbdfb86a47
   languageName: node
   linkType: hard
 
@@ -11172,15 +11175,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^5.0.1":
-  version: 5.1.6
-  resolution: "minimatch@npm:5.1.6"
-  dependencies:
-    brace-expansion: ^2.0.1
-  checksum: 7564208ef81d7065a370f788d337cd80a689e981042cb9a1d0e6580b6c6a8c9279eba80010516e258835a988363f99f54a6f711a315089b8b42694f5da9d0d77
-  languageName: node
-  linkType: hard
-
 "minimatch@npm:^9.0.0, minimatch@npm:^9.0.4, minimatch@npm:^9.0.5":
   version: 9.0.5
   resolution: "minimatch@npm:9.0.5"
@@ -11393,18 +11387,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nitrogen@npm:^0.31.0":
-  version: 0.31.0
-  resolution: "nitrogen@npm:0.31.0"
+"nitrogen@npm:^0.33.7":
+  version: 0.33.7
+  resolution: "nitrogen@npm:0.33.7"
   dependencies:
     chalk: ^5.3.0
-    react-native-nitro-modules: ^0.31.0
+    react-native-nitro-modules: ^0.33.7
     ts-morph: ^27.0.0
     yargs: ^18.0.0
     zod: ^4.0.5
   bin:
     nitrogen: lib/index.js
-  checksum: dec79e322f7f4b4e60344ab787771b7c4052c4ad6f41944963995f9acbdedc9abe73a0ef6398c69175e7e9b5d94eeb910b55d5b62f2b4fd31206557f73ba5947
+  checksum: 27edbdedcf869fc329bff094e813fb0f954ecb9dfce1b820a8b3290fb6313d0197407bea810ee9c8445a4c1cdc60a94717d524d906dbd3c4f42d7919a765ee21
   languageName: node
   linkType: hard
 
@@ -12742,9 +12736,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-builder-bob@npm:^0.40.13":
-  version: 0.40.13
-  resolution: "react-native-builder-bob@npm:0.40.13"
+"react-native-builder-bob@npm:^0.40.17":
+  version: 0.40.17
+  resolution: "react-native-builder-bob@npm:0.40.17"
   dependencies:
     "@babel/core": ^7.25.2
     "@babel/plugin-transform-flow-strip-types": ^7.26.5
@@ -12760,17 +12754,17 @@ __metadata:
     del: ^6.1.1
     escape-string-regexp: ^4.0.0
     fs-extra: ^10.1.0
-    glob: ^8.0.3
+    glob: ^10.5.0
     is-git-dirty: ^2.0.1
     json5: ^2.2.1
     kleur: ^4.1.4
     prompts: ^2.4.2
-    react-native-monorepo-config: ^0.1.8
+    react-native-monorepo-config: ^0.3.1
     which: ^2.0.2
     yargs: ^17.5.1
   bin:
     bob: bin/bob
-  checksum: 3140749ce4c2b4362502b2074ef2a6de92e03ab1a49bdbfc8058fbea0335a000d0554d012d9ce857b18bc395a2d6796c011d922725089e4688d6760f0b56b519
+  checksum: 418b911295565994c06e827be39b7a7cd775c9a64c071dbcca37d336992f9186c4d9996da283ecb2ab93dacc0c12d126c0eaee03d15a77116d88590fbbbfc46a
   languageName: node
   linkType: hard
 
@@ -12790,10 +12784,10 @@ __metadata:
     "@types/react": ^19.0.0
     react: 19.0.0
     react-native: 0.79.2
-    react-native-builder-bob: ^0.40.13
+    react-native-builder-bob: ^0.40.17
     react-native-mapbox-turn-by-turn-navigation: "workspace:^"
     react-native-monorepo-config: ^0.1.9
-    react-native-nitro-modules: ^0.31.0
+    react-native-nitro-modules: ^0.33.7
   languageName: unknown
   linkType: soft
 
@@ -12823,12 +12817,12 @@ __metadata:
     eslint-plugin-prettier: ^5.2.3
     expo-module-scripts: ^4.1.9
     jest: ^29.7.0
-    nitrogen: ^0.31.0
+    nitrogen: ^0.33.7
     prettier: ^3.0.3
     react: 19.0.0
     react-native: 0.79.2
-    react-native-builder-bob: ^0.40.13
-    react-native-nitro-modules: 0.31.0
+    react-native-builder-bob: ^0.40.17
+    react-native-nitro-modules: 0.33.7
     semantic-release: ^22.0.0
     turbo: ^1.10.7
     typedoc: ^0.28.8
@@ -12837,19 +12831,9 @@ __metadata:
   peerDependencies:
     react: "*"
     react-native: "*"
-    react-native-nitro-modules: ^0.31.0
+    react-native-nitro-modules: ^0.33.7
   languageName: unknown
   linkType: soft
-
-"react-native-monorepo-config@npm:^0.1.8":
-  version: 0.1.9
-  resolution: "react-native-monorepo-config@npm:0.1.9"
-  dependencies:
-    escape-string-regexp: ^5.0.0
-    fast-glob: ^3.3.3
-  checksum: 6356c362c517c49e17d54ee764c3566ba71491fa0d755618ecf2ca548348668e84fe448c24066645983acbc2bd4c0ed47594f9b3ec9dcc0558c0fd9594d2391e
-  languageName: node
-  linkType: hard
 
 "react-native-monorepo-config@npm:^0.1.9":
   version: 0.1.10
@@ -12861,13 +12845,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-nitro-modules@npm:0.31.0, react-native-nitro-modules@npm:^0.31.0":
-  version: 0.31.0
-  resolution: "react-native-nitro-modules@npm:0.31.0"
+"react-native-monorepo-config@npm:^0.3.1":
+  version: 0.3.2
+  resolution: "react-native-monorepo-config@npm:0.3.2"
+  dependencies:
+    escape-string-regexp: ^5.0.0
+    fast-glob: ^3.3.3
+  checksum: 4ab58ff3a4e92675fad49240b396d16528cef993f4da635bbb899bfcb0d7dc655547c551747f1015ef4a726c493dcb9d571e7908a15dd8c9c2c7ef2146438bca
+  languageName: node
+  linkType: hard
+
+"react-native-nitro-modules@npm:0.33.7, react-native-nitro-modules@npm:^0.33.7":
+  version: 0.33.7
+  resolution: "react-native-nitro-modules@npm:0.33.7"
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 6e8f1e05faf6c74f0ef34b0561af6e66ce830d8d9bcfd3aad5ffeae13dbb5c7e91e82c5ef4cbeb492a84930191c1b07d5297e3d5dacbbf27560fd44243bb7747
+  checksum: d4880858ed68478a46bbe1a09c64cd2e2ed15dfc03ec2a4c688eb008173b8861611338f27b3634334667306bdadd3b48fe99bb3b22d1d688eaf8414dbb34bdeb
   languageName: node
   linkType: hard
 
