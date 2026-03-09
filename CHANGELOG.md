@@ -1,3 +1,10 @@
+# [0.9.0](https://github.com/atoui-zahreddine/rn-nitro-mapbox-navigation/compare/v0.8.0...v0.9.0) (2026-03-09)
+
+
+### Features
+
+* update react-native-nitro-modules and nitrogen to version 0.35.0 ([cc8407f](https://github.com/atoui-zahreddine/rn-nitro-mapbox-navigation/commit/cc8407f54049397efc1894cbb3ac150daa5497a8))
+
 # [0.8.0](https://github.com/atoui-zahreddine/rn-nitro-mapbox-navigation/compare/v0.7.1...v0.8.0) (2026-03-09)
 
 
