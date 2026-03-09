@@ -1,3 +1,10 @@
+# [0.8.0](https://github.com/atoui-zahreddine/rn-nitro-mapbox-navigation/compare/v0.7.1...v0.8.0) (2026-03-09)
+
+
+### Features
+
+* rename library to rn-nitro-mapbox-navigation ([#2](https://github.com/atoui-zahreddine/rn-nitro-mapbox-navigation/issues/2)) ([faeecad](https://github.com/atoui-zahreddine/rn-nitro-mapbox-navigation/commit/faeecad8e7a1319ad0bef63f3761fef28faebca3))
+
 ## [0.7.1](https://github.com/atoui-zahreddine/rn-nitro-mapbox-navigation/compare/v0.7.0...v0.7.1) (2025-10-20)
 
 
