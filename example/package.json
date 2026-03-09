@@ -1,5 +1,5 @@
 {
-  "name": "react-native-mapbox-turn-by-turn-navigation-example",
+  "name": "rn-nitro-mapbox-navigation-example",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -13,8 +13,8 @@
   "dependencies": {
     "react": "19.0.0",
     "react-native": "0.79.2",
-    "react-native-mapbox-turn-by-turn-navigation": "workspace:^",
-    "react-native-nitro-modules": "^0.33.7"
+    "react-native-nitro-modules": "^0.33.7",
+    "rn-nitro-mapbox-navigation": "workspace:^"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

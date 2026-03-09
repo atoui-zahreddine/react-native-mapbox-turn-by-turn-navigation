@@ -1,8 +1,8 @@
-**react-native-mapbox-turn-by-turn-navigation**
+**rn-nitro-mapbox-navigation**
 
 ***
 
-# React Native Mapbox Turn-by-Turn Navigation
+# rn-nitro-mapbox-navigation
 
 React Native module for Mapbox Navigation SDK, providing full turn-by-turn navigation functionality.
 
@@ -18,7 +18,7 @@ React Native module for Mapbox Navigation SDK, providing full turn-by-turn navig
 To use this library, you need to install it along with `react-native-nitro-modules`:
 
 ```sh
-npm install react-native-mapbox-turn-by-turn-navigation react-native-nitro-modules
+npm install rn-nitro-mapbox-navigation react-native-nitro-modules
 ```
 
 > **Note**: `react-native-nitro-modules` is a peer dependency and is required for this library to work.
@@ -51,7 +51,7 @@ To enable automatic prebuild configuration, add the following to your `app.json`
       ]
     },
     "plugins": [
-      "react-native-mapbox-turn-by-turn-navigation",
+      "rn-nitro-mapbox-navigation",
       {
         "mapboxPublicToken": "<YOUR_MAPBOX_PUBLIC_TOKEN>",
         "mapboxDownloadsToken": "<YOUR_MAPBOX_DOWNLOADS_TOKEN>"
@@ -152,11 +152,11 @@ This will automatically configure the necessary settings for Mapbox integration 
 Here's a basic example of how to use the navigation view in your component:
 
 ```javascript
-import { MapboxTurnByTurnNavigationView } from "react-native-mapbox-turn-by-turn-navigation";
+import { NitroMapboxNavigationView } from "rn-nitro-mapbox-navigation";
 
 // ...
 
-<MapboxTurnByTurnNavigationView
+<NitroMapboxNavigationView
   style={{ flex: 1 }}
   origin={{
     longitude: 5.058566,

@@ -67,7 +67,7 @@ export type LocationChangeListener = (event: LocationData) => void;
 export type OnErrorListener = (error: Message) => void;
 export type OnCancelListener = () => void;
 
-export interface MapboxTurnByTurnNavigationProps extends HybridViewProps {
+export interface NitroMapboxNavigationProps extends HybridViewProps {
   mute?: boolean;
   distanceUnit?: DistanceUnitEnum;
   origin: Coordinate;
@@ -88,9 +88,9 @@ export interface MapboxTurnByTurnNavigationProps extends HybridViewProps {
   onWaypointArrival?: OnWaypointArrivalListener;
 }
 
-export interface MapboxTurnByTurnNavigationMethods extends HybridViewMethods {}
+export interface NitroMapboxNavigationMethods extends HybridViewMethods {}
 
-export type MapboxTurnByTurnNavigation = HybridView<
-  MapboxTurnByTurnNavigationProps,
-  MapboxTurnByTurnNavigationMethods
+export type NitroMapboxNavigation = HybridView<
+  NitroMapboxNavigationProps,
+  NitroMapboxNavigationMethods
 >;

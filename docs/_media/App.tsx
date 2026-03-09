@@ -8,14 +8,13 @@ import {
 
 import { useEffect, useRef, useState } from 'react';
 import {
-  MapboxTurnByTurnNavigationView,
+  NitroMapboxNavigationView,
+  type Coordinate,
   type LocationData,
-} from 'react-native-mapbox-turn-by-turn-navigation';
-import type {
-  Coordinate,
-  RouteProgress,
-  WaypointEvent,
-} from '../../lib/typescript/src';
+  type RouteProgress,
+  type WaypointEvent,
+} from 'rn-nitro-mapbox-navigation';
+import { callback } from 'react-native-nitro-modules';
 
 export default function App() {
   const isMountedRef = useRef<boolean>(true);
@@ -56,7 +55,7 @@ export default function App() {
     <>
       <StatusBar barStyle="dark-content" />
       <View style={styles.container}>
-        <MapboxTurnByTurnNavigationView
+        <NitroMapboxNavigationView
           style={styles.mapboxView}
           origin={{
             longitude: 5.082325,
@@ -66,31 +65,21 @@ export default function App() {
             longitude: 5.058566,
             latitude: 51.560985,
           }}
-          onLocationChange={{
-            f: (event: LocationData) => {
-              console.log('Location changed:', event);
-            },
-          }}
-          onCancel={{
-            f: () => {
-              console.log('Navigation cancelled');
-            },
-          }}
-          onArrival={{
-            f: (coordinates: Coordinate) => {
-              console.log('Arrived at destination:', coordinates);
-            },
-          }}
-          onWaypointArrival={{
-            f: (event: WaypointEvent) => {
-              console.log('Arrived at waypoint:', event);
-            },
-          }}
-          onRouteProgressChange={{
-            f: (event: RouteProgress) => {
-              console.log('Route progress changed:', event);
-            },
-          }}
+          onLocationChange={callback((event: LocationData) => {
+            console.log('Location changed:', event);
+          })}
+          onCancel={callback(() => {
+            console.log('Navigation cancelled');
+          })}
+          onArrival={callback((coordinates: Coordinate) => {
+            console.log('Arrived at destination:', coordinates);
+          })}
+          onWaypointArrival={callback((event: WaypointEvent) => {
+            console.log('Arrived at waypoint:', event);
+          })}
+          onRouteProgressChange={callback((event: RouteProgress) => {
+            console.log('Route progress changed:', event);
+          })}
         />
       </View>
     </>

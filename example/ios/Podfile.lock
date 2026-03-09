@@ -14,7 +14,7 @@ PODS:
   - MapboxCoreNavigation (2.20.2):
     - MapboxDirections (~> 2.14)
     - MapboxNavigationNative (< 207.0.0, >= 206.0.1)
-  - MapboxDirections (2.14.2):
+  - MapboxDirections (2.14.3):
     - Polyline (~> 5.0)
     - Turf (~> 2.8.0)
   - MapboxMaps (10.19.4):
@@ -28,10 +28,10 @@ PODS:
     - MapboxMaps (~> 10.19)
     - MapboxSpeech (~> 2.0)
     - Solar-dev (~> 3.0)
-  - MapboxNavigationNative (206.1.1):
+  - MapboxNavigationNative (206.2.2):
     - MapboxCommon (~> 23.10)
   - MapboxSpeech (2.1.1)
-  - MapboxTurnByTurnNavigation (0.5.0):
+  - NitroMapboxNavigation (0.7.1):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -58,7 +58,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - NitroModules (0.28.1):
+  - NitroModules (0.33.7):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1743,7 +1743,7 @@ DEPENDENCIES:
   - fmt (from `../node_modules/react-native/third-party-podspecs/fmt.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - hermes-engine (from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
-  - MapboxTurnByTurnNavigation (from `../..`)
+  - NitroMapboxNavigation (from `../..`)
   - NitroModules (from `../node_modules/react-native-nitro-modules`)
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCT-Folly/Fabric (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
@@ -1843,7 +1843,7 @@ EXTERNAL SOURCES:
   hermes-engine:
     :podspec: "../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec"
     :tag: hermes-2025-03-03-RNv0.79.0-bc17d964d03743424823d7dd1a9f37633459c5c5
-  MapboxTurnByTurnNavigation:
+  NitroMapboxNavigation:
     :path: "../.."
   NitroModules:
     :path: "../node_modules/react-native-nitro-modules"
@@ -1985,14 +1985,14 @@ SPEC CHECKSUMS:
   MapboxCommon: cc47fafe3fe5408ca49240aa80fa64f27f275711
   MapboxCoreMaps: 35685edba03e44468aed57c3dfd7f8795edafda8
   MapboxCoreNavigation: ccc186496b0272d9fe93d4bee49dbf64e798dcd5
-  MapboxDirections: d4fe7d43cff82aa0c15955d1b4563a5a01e2d4de
+  MapboxDirections: d9ad8452e8927d95ed21e35f733834dbca7e0eb1
   MapboxMaps: f87023cf0d72b180b40ea0b6fb4b2d7db6b73b71
   MapboxMobileEvents: d044b9edbe0ec7df60f6c2c9634fe9a7f449266b
   MapboxNavigation: 2f7e7ebb55cdc0b1efd48dc004e2e70c9d43006b
-  MapboxNavigationNative: d898e5882007b6caea5af158b0dffb7c75e7641d
+  MapboxNavigationNative: 629e359f3d2590acd1ebbacaaf99e1a80ee57e42
   MapboxSpeech: cd25ef99c3a3d2e0da72620ff558276ea5991a77
-  MapboxTurnByTurnNavigation: 15c8e59ec9e58659fa79fa4f69795aeef21ebe42
-  NitroModules: bc2dab0712fcd1a91aaafcd3a7a0c060cd1a7294
+  NitroMapboxNavigation: 8c7ee3bc377a2055e2bb15039080080f0b1066c5
+  NitroModules: fd2dd43c00bd5b3d92e50e1a02301a11d740ca65
   Polyline: 2a1f29f87f8d9b7de868940f4f76deb8c678a5b1
   RCT-Folly: e78785aa9ba2ed998ea4151e314036f6c49e6d82
   RCTDeprecation: 83ffb90c23ee5cea353bd32008a7bca100908f8c
@@ -2061,6 +2061,6 @@ SPEC CHECKSUMS:
   Turf: aa2ede4298009639d10db36aba1a7ebaad072a5e
   Yoga: c758bfb934100bb4bf9cbaccb52557cee35e8bdf
 
-PODFILE CHECKSUM: d36025acfc35e1a933681a298a6d5f2877cd75c8
+PODFILE CHECKSUM: 325e66dda1aa715113cc495ec7d056a483ab604f
 
-COCOAPODS: 1.16.2
+COCOAPODS: 1.15.2

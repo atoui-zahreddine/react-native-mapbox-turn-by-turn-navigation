@@ -1,4 +1,4 @@
-package com.margelo.nitro.mapboxturnbyturnnavigation
+package com.margelo.nitro.nitromapboxnavigation
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
@@ -64,10 +64,10 @@ import com.mapbox.navigation.voice.api.MapboxSpeechApi
 import com.mapbox.navigation.voice.api.MapboxVoiceInstructionsPlayer
 import com.mapbox.navigation.voice.model.SpeechAnnouncement
 import com.mapbox.navigation.voice.model.SpeechVolume
-import com.margelo.nitro.mapboxturnbyturnnavigation.databinding.NavigationViewBinding
+import com.margelo.nitro.nitromapboxnavigation.databinding.NavigationViewBinding
 import java.util.*
 
-class NavigationView(context: ThemedReactContext, private val implementation: HybridMapboxTurnByTurnNavigation) :
+class NavigationView(context: ThemedReactContext, private val implementation: HybridNitroMapboxNavigation) :
   FrameLayout(context) {
 
   private companion object {

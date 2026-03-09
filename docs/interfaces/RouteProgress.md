@@ -1,12 +1,12 @@
-[**react-native-mapbox-turn-by-turn-navigation**](../README.md)
+[**rn-nitro-mapbox-navigation**](../README.md)
 
 ***
 
-[react-native-mapbox-turn-by-turn-navigation](../globals.md) / RouteProgress
+[rn-nitro-mapbox-navigation](../globals.md) / RouteProgress
 
 # Interface: RouteProgress
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:33
+Defined in: NitroMapboxNavigation.nitro.d.ts:33
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:33
 
 > **distanceRemaining**: `number`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:37
+Defined in: NitroMapboxNavigation.nitro.d.ts:37
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:37
 
 > **distanceTraveled**: `number`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:34
+Defined in: NitroMapboxNavigation.nitro.d.ts:34
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:34
 
 > **durationRemaining**: `number`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:35
+Defined in: NitroMapboxNavigation.nitro.d.ts:35
 
 ***
 
@@ -38,4 +38,4 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:35
 
 > **fractionTraveled**: `number`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:36
+Defined in: NitroMapboxNavigation.nitro.d.ts:36

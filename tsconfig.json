@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "react-native-mapbox-turn-by-turn-navigation": ["./src/index"]
+      "rn-nitro-mapbox-navigation": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

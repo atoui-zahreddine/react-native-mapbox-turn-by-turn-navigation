@@ -18,10 +18,10 @@ import { existsSync, mkdirSync, writeFileSync } from 'fs';
 import type { ExpoConfig } from '@expo/config-types';
 
 let pkg: { name: string; version?: string } = {
-  name: 'react-native-mapbox-turn-by-turn-navigation',
+  name: 'rn-nitro-mapbox-navigation',
 };
 try {
-  pkg = require('react-native-mapbox-turn-by-turn-navigation');
+  pkg = require('rn-nitro-mapbox-navigation');
 } catch {
   // empty catch block
 }
@@ -136,7 +136,7 @@ const appendContents = ({
 
 export const addMapboxMavenRepo = (src: string): string =>
   appendContents({
-    tag: 'react-native-mapbox-turn-by-turn-navigation',
+    tag: 'rn-nitro-mapbox-navigation',
     src,
     newSrc: gradleMaven,
     comment: '//',

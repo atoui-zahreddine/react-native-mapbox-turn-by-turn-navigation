@@ -1,14 +1,14 @@
-import MapboxTurnByTurnNavigationConfig from '../nitrogen/generated/shared/json/MapboxTurnByTurnNavigationConfig.json';
+import NitroMapboxNavigationConfig from '../nitrogen/generated/shared/json/NitroMapboxNavigationConfig.json';
 import type {
-  MapboxTurnByTurnNavigationMethods,
-  MapboxTurnByTurnNavigationProps,
-} from './MapboxTurnByTurnNavigation.nitro';
+  NitroMapboxNavigationMethods,
+  NitroMapboxNavigationProps,
+} from './NitroMapboxNavigation.nitro';
 
-export * from './MapboxTurnByTurnNavigation.nitro';
+export * from './NitroMapboxNavigation.nitro';
 
 import { getHostComponent } from 'react-native-nitro-modules';
 
-export const MapboxTurnByTurnNavigationView = getHostComponent<
-  MapboxTurnByTurnNavigationProps,
-  MapboxTurnByTurnNavigationMethods
->('MapboxTurnByTurnNavigation', () => MapboxTurnByTurnNavigationConfig);
+export const NitroMapboxNavigationView = getHostComponent<
+  NitroMapboxNavigationProps,
+  NitroMapboxNavigationMethods
+>('NitroMapboxNavigation', () => NitroMapboxNavigationConfig);

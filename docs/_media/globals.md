@@ -1,8 +1,8 @@
-[**react-native-mapbox-turn-by-turn-navigation**](README.md)
+[**rn-nitro-mapbox-navigation**](README.md)
 
 ***
 
-# react-native-mapbox-turn-by-turn-navigation
+# rn-nitro-mapbox-navigation
 
 ## Enumerations
 
@@ -13,9 +13,9 @@
 
 - [Coordinate](interfaces/Coordinate.md)
 - [LocationData](interfaces/LocationData.md)
-- [MapboxTurnByTurnNavigationMethods](interfaces/MapboxTurnByTurnNavigationMethods.md)
-- [MapboxTurnByTurnNavigationProps](interfaces/MapboxTurnByTurnNavigationProps.md)
 - [Message](interfaces/Message.md)
+- [NitroMapboxNavigationMethods](interfaces/NitroMapboxNavigationMethods.md)
+- [NitroMapboxNavigationProps](interfaces/NitroMapboxNavigationProps.md)
 - [RouteProgress](interfaces/RouteProgress.md)
 - [Waypoint](interfaces/Waypoint.md)
 - [WaypointEvent](interfaces/WaypointEvent.md)
@@ -23,7 +23,7 @@
 ## Type Aliases
 
 - [LocationChangeListener](type-aliases/LocationChangeListener.md)
-- [MapboxTurnByTurnNavigation](type-aliases/MapboxTurnByTurnNavigation.md)
+- [NitroMapboxNavigation](type-aliases/NitroMapboxNavigation.md)
 - [OnArrivalListener](type-aliases/OnArrivalListener.md)
 - [OnCancelListener](type-aliases/OnCancelListener.md)
 - [OnErrorListener](type-aliases/OnErrorListener.md)
@@ -32,4 +32,4 @@
 
 ## Variables
 
-- [MapboxTurnByTurnNavigationView](variables/MapboxTurnByTurnNavigationView.md)
+- [NitroMapboxNavigationView](variables/NitroMapboxNavigationView.md)

@@ -12768,73 +12768,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-mapbox-turn-by-turn-navigation-example@workspace:example":
-  version: 0.0.0-use.local
-  resolution: "react-native-mapbox-turn-by-turn-navigation-example@workspace:example"
-  dependencies:
-    "@babel/core": ^7.25.2
-    "@babel/preset-env": ^7.25.3
-    "@babel/runtime": ^7.25.0
-    "@react-native-community/cli": 18.0.0
-    "@react-native-community/cli-platform-android": 18.0.0
-    "@react-native-community/cli-platform-ios": 18.0.0
-    "@react-native/babel-preset": 0.79.2
-    "@react-native/metro-config": 0.79.2
-    "@react-native/typescript-config": 0.79.2
-    "@types/react": ^19.0.0
-    react: 19.0.0
-    react-native: 0.79.2
-    react-native-builder-bob: ^0.40.17
-    react-native-mapbox-turn-by-turn-navigation: "workspace:^"
-    react-native-monorepo-config: ^0.1.9
-    react-native-nitro-modules: ^0.33.7
-  languageName: unknown
-  linkType: soft
-
-"react-native-mapbox-turn-by-turn-navigation@workspace:., react-native-mapbox-turn-by-turn-navigation@workspace:^":
-  version: 0.0.0-use.local
-  resolution: "react-native-mapbox-turn-by-turn-navigation@workspace:."
-  dependencies:
-    "@commitlint/config-conventional": ^19.6.0
-    "@eslint/compat": ^1.2.7
-    "@eslint/eslintrc": ^3.3.0
-    "@eslint/js": ^9.22.0
-    "@evilmartians/lefthook": ^1.5.0
-    "@expo/config-plugins": ^10.1.2
-    "@react-native/babel-preset": 0.79.2
-    "@react-native/eslint-config": ^0.78.0
-    "@semantic-release/changelog": ^6.0.3
-    "@semantic-release/git": ^10.0.1
-    "@semantic-release/github": ^10.0.2
-    "@semantic-release/npm": ^12.0.0
-    "@types/jest": ^29.5.5
-    "@types/react": ^19.0.0
-    commitlint: ^19.6.1
-    del-cli: ^5.1.0
-    eslint: ^9.22.0
-    eslint-config-prettier: ^10.1.1
-    eslint-plugin-jest: ^29.0.1
-    eslint-plugin-prettier: ^5.2.3
-    expo-module-scripts: ^4.1.9
-    jest: ^29.7.0
-    nitrogen: ^0.33.7
-    prettier: ^3.0.3
-    react: 19.0.0
-    react-native: 0.79.2
-    react-native-builder-bob: ^0.40.17
-    react-native-nitro-modules: 0.33.7
-    semantic-release: ^22.0.0
-    turbo: ^1.10.7
-    typedoc: ^0.28.8
-    typedoc-plugin-markdown: ^4.8.0
-    typescript: ^5.8.3
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-    react-native-nitro-modules: ^0.33.7
-  languageName: unknown
-  linkType: soft
-
 "react-native-monorepo-config@npm:^0.1.9":
   version: 0.1.10
   resolution: "react-native-monorepo-config@npm:0.1.10"
@@ -13361,6 +13294,73 @@ __metadata:
   checksum: 87f4164e396f0171b0a3386cc1877a817f572148ee13a7e113b238e48e8a9f2f31d009a92ec38a591ff1567d9662c6b67fd8818a2dbbaed74bc26a87a2a4a9a0
   languageName: node
   linkType: hard
+
+"rn-nitro-mapbox-navigation-example@workspace:example":
+  version: 0.0.0-use.local
+  resolution: "rn-nitro-mapbox-navigation-example@workspace:example"
+  dependencies:
+    "@babel/core": ^7.25.2
+    "@babel/preset-env": ^7.25.3
+    "@babel/runtime": ^7.25.0
+    "@react-native-community/cli": 18.0.0
+    "@react-native-community/cli-platform-android": 18.0.0
+    "@react-native-community/cli-platform-ios": 18.0.0
+    "@react-native/babel-preset": 0.79.2
+    "@react-native/metro-config": 0.79.2
+    "@react-native/typescript-config": 0.79.2
+    "@types/react": ^19.0.0
+    react: 19.0.0
+    react-native: 0.79.2
+    react-native-builder-bob: ^0.40.17
+    react-native-monorepo-config: ^0.1.9
+    react-native-nitro-modules: ^0.33.7
+    rn-nitro-mapbox-navigation: "workspace:^"
+  languageName: unknown
+  linkType: soft
+
+"rn-nitro-mapbox-navigation@workspace:., rn-nitro-mapbox-navigation@workspace:^":
+  version: 0.0.0-use.local
+  resolution: "rn-nitro-mapbox-navigation@workspace:."
+  dependencies:
+    "@commitlint/config-conventional": ^19.6.0
+    "@eslint/compat": ^1.2.7
+    "@eslint/eslintrc": ^3.3.0
+    "@eslint/js": ^9.22.0
+    "@evilmartians/lefthook": ^1.5.0
+    "@expo/config-plugins": ^10.1.2
+    "@react-native/babel-preset": 0.79.2
+    "@react-native/eslint-config": ^0.78.0
+    "@semantic-release/changelog": ^6.0.3
+    "@semantic-release/git": ^10.0.1
+    "@semantic-release/github": ^10.0.2
+    "@semantic-release/npm": ^12.0.0
+    "@types/jest": ^29.5.5
+    "@types/react": ^19.0.0
+    commitlint: ^19.6.1
+    del-cli: ^5.1.0
+    eslint: ^9.22.0
+    eslint-config-prettier: ^10.1.1
+    eslint-plugin-jest: ^29.0.1
+    eslint-plugin-prettier: ^5.2.3
+    expo-module-scripts: ^4.1.9
+    jest: ^29.7.0
+    nitrogen: ^0.33.7
+    prettier: ^3.0.3
+    react: 19.0.0
+    react-native: 0.79.2
+    react-native-builder-bob: ^0.40.17
+    react-native-nitro-modules: 0.33.7
+    semantic-release: ^22.0.0
+    turbo: ^1.10.7
+    typedoc: ^0.28.8
+    typedoc-plugin-markdown: ^4.8.0
+    typescript: ^5.8.3
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+    react-native-nitro-modules: ^0.33.7
+  languageName: unknown
+  linkType: soft
 
 "run-parallel@npm:^1.1.9":
   version: 1.2.0

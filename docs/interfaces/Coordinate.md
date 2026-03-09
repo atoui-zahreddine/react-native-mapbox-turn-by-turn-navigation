@@ -1,12 +1,12 @@
-[**react-native-mapbox-turn-by-turn-navigation**](../README.md)
+[**rn-nitro-mapbox-navigation**](../README.md)
 
 ***
 
-[react-native-mapbox-turn-by-turn-navigation](../globals.md) / Coordinate
+[rn-nitro-mapbox-navigation](../globals.md) / Coordinate
 
 # Interface: Coordinate
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:2
+Defined in: NitroMapboxNavigation.nitro.d.ts:2
 
 ## Extended by
 
@@ -19,7 +19,7 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:2
 
 > **latitude**: `number`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:3
+Defined in: NitroMapboxNavigation.nitro.d.ts:3
 
 ***
 
@@ -27,4 +27,4 @@ Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:3
 
 > **longitude**: `number`
 
-Defined in: MapboxTurnByTurnNavigation.nitro.d.ts:4
+Defined in: NitroMapboxNavigation.nitro.d.ts:4

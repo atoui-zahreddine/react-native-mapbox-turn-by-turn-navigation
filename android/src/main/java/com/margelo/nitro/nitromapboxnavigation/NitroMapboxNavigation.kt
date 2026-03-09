@@ -1,4 +1,4 @@
-package com.margelo.nitro.mapboxturnbyturnnavigation
+package com.margelo.nitro.nitromapboxnavigation
 
 import android.view.View
 import com.facebook.proguard.annotations.DoNotStrip
@@ -7,7 +7,7 @@ import com.mapbox.api.directions.v5.DirectionsCriteria
 import com.mapbox.geojson.Point
 
 @DoNotStrip
-class HybridMapboxTurnByTurnNavigation(val context: ThemedReactContext) : HybridMapboxTurnByTurnNavigationSpec() {
+class HybridNitroMapboxNavigation(val context: ThemedReactContext) : HybridNitroMapboxNavigationSpec() {
 
   // View
   override val view: View = NavigationView(context, this)

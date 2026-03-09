@@ -1,16 +1,16 @@
 {
-  "cxxNamespace": ["mapboxturnbyturnnavigation"],
+  "cxxNamespace": ["nitromapboxnavigation"],
   "ios": {
-    "iosModuleName": "MapboxTurnByTurnNavigation"
+    "iosModuleName": "NitroMapboxNavigation"
   },
   "android": {
-    "androidNamespace": ["mapboxturnbyturnnavigation"],
-    "androidCxxLibName": "mapboxturnbyturnnavigation"
+    "androidNamespace": ["nitromapboxnavigation"],
+    "androidCxxLibName": "nitromapboxnavigation"
   },
   "autolinking": {
-    "MapboxTurnByTurnNavigation": {
-      "swift": "HybridMapboxTurnByTurnNavigation",
-      "kotlin": "HybridMapboxTurnByTurnNavigation"
+    "NitroMapboxNavigation": {
+      "swift": "HybridNitroMapboxNavigation",
+      "kotlin": "HybridNitroMapboxNavigation"
     }
   },
   "ignorePaths": ["node_modules"]

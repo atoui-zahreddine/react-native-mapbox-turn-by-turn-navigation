@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-React Native library (`react-native-mapbox-turn-by-turn-navigation`) that wraps Mapbox Navigation SDK to provide a full turn-by-turn navigation view component. Built with **Nitro Modules** (not the legacy bridge or TurboModules). New Architecture (Fabric) only — no Old Architecture support.
+React Native library (`rn-nitro-mapbox-navigation`) that wraps Mapbox Navigation SDK to provide a full turn-by-turn navigation view component. Built with **Nitro Modules** (not the legacy bridge or TurboModules). New Architecture (Fabric) only — no Old Architecture support.
 
 - **iOS**: MapboxNavigation 2.20.1 via CocoaPods (Swift)
 - **Android**: Mapbox Navigation 3.12.2 via Gradle (Kotlin + C++ JNI bridge)
@@ -16,9 +16,9 @@ React Native library (`react-native-mapbox-turn-by-turn-navigation`) that wraps 
 Monorepo with Yarn workspaces:
 - **Root**: The library itself (published to npm)
 - **`example/`**: React Native example app that consumes the library via `workspace:^`
-- **`src/`**: TypeScript source — `index.tsx` (entry), `MapboxTurnByTurnNavigation.nitro.ts` (Nitro spec defining all types/props/methods), `plugin/` (Expo config plugin)
-- **`ios/`**: Single Swift file (`MapboxTurnByTurnNavigation.swift`) implementing `HybridMapboxTurnByTurnNavigationSpec`
-- **`android/src/`**: Kotlin native implementation — `MapboxTurnByTurnNavigation.kt` (hybrid spec adapter), `NavigationView.kt` (~720 lines, main view logic), plus C++ JNI adapter and XML layout
+- **`src/`**: TypeScript source — `index.tsx` (entry), `NitroMapboxNavigation.nitro.ts` (Nitro spec defining all types/props/methods), `plugin/` (Expo config plugin)
+- **`ios/`**: Single Swift file (`NitroMapboxNavigation.swift`) implementing `HybridNitroMapboxNavigationSpec`
+- **`android/src/`**: Kotlin native implementation — `NitroMapboxNavigation.kt` (hybrid spec adapter), `NavigationView.kt` (~720 lines, main view logic), plus C++ JNI adapter and XML layout
 - **`nitrogen/`**: Auto-generated bridge code (not committed, regenerated via `yarn nitrogen`)
 - **`lib/`**: Build output from react-native-builder-bob (commonjs, module, typescript)
 
@@ -46,14 +46,14 @@ yarn example android    # Run on Android
 
 ### Native Code Editing
 
-- **iOS**: Open `example/ios/MapboxTurnByTurnNavigationExample.xcworkspace` in Xcode. Library source is at `Pods > Development Pods > react-native-mapbox-turn-by-turn-navigation`.
-- **Android**: Open `example/android` in Android Studio. Library source is under `react-native-mapbox-turn-by-turn-navigation`.
+- **iOS**: Open `example/ios/NitroMapboxNavigationExample.xcworkspace` in Xcode. Library source is at `Pods > Development Pods > rn-nitro-mapbox-navigation`.
+- **Android**: Open `example/android` in Android Studio. Library source is under `rn-nitro-mapbox-navigation`.
 
 ## Architecture
 
 ### Nitro Modules Bridge
 
-The API surface is defined in `src/MapboxTurnByTurnNavigation.nitro.ts`. This is a **Nitro View** (not a plain module). Nitrogen generates:
+The API surface is defined in `src/NitroMapboxNavigation.nitro.ts`. This is a **Nitro View** (not a plain module). Nitrogen generates:
 - Shared C++ specs in `nitrogen/generated/shared/`
 - iOS Swift/C++ bridge in `nitrogen/generated/ios/`
 - Android Kotlin/C++/JNI bridge in `nitrogen/generated/android/`
@@ -68,7 +68,7 @@ When modifying the API, edit the `.nitro.ts` file then run `yarn nitrogen` to re
 
 ### Native Implementations
 
-**iOS** (`ios/MapboxTurnByTurnNavigation.swift`): `HybridMapboxTurnByTurnNavigation` extends the generated spec. Uses `NavigationViewController` from MapboxNavigation. A `CustomUIView` subclass handles cleanup. The `embed()` method calculates routes via `Directions.shared.calculateRoutes()` and embeds the navigation UI.
+**iOS** (`ios/NitroMapboxNavigation.swift`): `HybridNitroMapboxNavigation` extends the generated spec. Uses `NavigationViewController` from MapboxNavigation. A `CustomUIView` subclass handles cleanup. The `embed()` method calculates routes via `Directions.shared.calculateRoutes()` and embeds the navigation UI.
 
 **Android** (`android/src/main/java/.../NavigationView.kt`): The main implementation. Extends `FrameLayout` with `ViewBinding` (`navigation_view.xml`). Manages `MapboxNavigation`, camera, route rendering, maneuver view, trip progress card, voice instructions, and all navigation observers.
 
